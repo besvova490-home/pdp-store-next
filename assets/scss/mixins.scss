@@ -1,0 +1,69 @@
+@import "./tokens/breakpoints.scss";
+
+@mixin transition {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin line-clamp($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+@mixin bkp-xs-1 {
+  @media screen and (min-width: $xs-1) {
+    @content;
+  }
+}
+
+@mixin bkp-xs-2 {
+  @media screen and (min-width: $xs-2) {
+    @content;
+  }
+}
+
+@mixin bkp-xs-3 {
+  @media screen and (min-width: $xs-3) {
+    @content;
+  }
+}
+
+@mixin bkp-xs-4 {
+  @media screen and (min-width: $xs-4) {
+    @content;
+  }
+}
+
+@mixin bkp-sm {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin bkp-md {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin bkp-lg {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin bkp-xl {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin bkp-xxl {
+  @media screen and (min-width: $xxl) {
+    @content;
+  }
+}

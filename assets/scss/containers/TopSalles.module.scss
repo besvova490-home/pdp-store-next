@@ -1,0 +1,40 @@
+@import "../tokens/colors.scss";
+
+.top-selles {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 270px);
+  grid-gap: 28px;
+
+  padding: 70px 80px;
+
+  &__description {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__description-text {
+    margin-top: 30px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__action {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    transition: 0.2s all;
+
+    opacity: 0;
+  }
+
+  &__item {
+    flex: 0 0 300px;
+  }
+}

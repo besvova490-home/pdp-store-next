@@ -1,0 +1,21 @@
+@import "../tokens/colors.scss";
+
+.discounts {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: center;
+
+    padding: 50px 0;
+
+    background: $secondary-5;
+  }
+
+  &__item_light {
+    background: $secondary-4;
+  }
+}

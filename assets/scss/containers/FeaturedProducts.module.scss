@@ -1,0 +1,31 @@
+.featured-products {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 100px 80px;
+
+  &__description {
+    margin-bottom: 60px;
+
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__sub-title {
+    text-align: center;
+  }
+
+  &__products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  &__product {
+  }
+}

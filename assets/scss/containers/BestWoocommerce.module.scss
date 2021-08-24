@@ -1,0 +1,24 @@
+@import "../tokens/colors.scss";
+
+.top-category {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 600px;
+  padding-left: 150px;
+
+  color: $neutral-3;
+  background-color: $mono-black;
+
+  font-family: Inter;
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__btn {
+    margin-top: 27px;
+  }
+}

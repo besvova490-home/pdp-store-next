@@ -1,0 +1,143 @@
+@import "../tokens/colors.scss";
+
+.header {
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 60px;
+    padding: 0 50px;
+
+    color: $mono-white;
+    background: $mono-black;
+  }
+
+  &__phone,
+  &__email {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 30px 50px;
+  }
+}
+
+.contacts {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    font-family: Inter;
+  }
+
+  &__img {
+    padding-right: 10px;
+  }
+
+  &__vertical-line {
+    width: 1px;
+    height: 20px;
+    margin: 0 15px;
+
+    border-right: 1px solid $mono-white;
+  }
+}
+
+.socials {
+  &__item {
+    margin: 0 10px;
+
+    cursor: pointer;
+  }
+}
+
+.navigation {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: Inter;
+  }
+
+  &__logo {
+    text-transform: uppercase;
+
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__link {
+    margin: 0 10px;
+
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    &:hover {
+      color: $primary-4;
+    }
+
+    &_active {
+      color: $primary-0;
+
+      &:hover {
+        color: $primary-0;
+      }
+    }
+  }
+}
+
+.logo {
+  cursor: pointer;
+
+  color: $mono-black;
+}
+
+.actions {
+  &__item {
+    position: relative;
+
+    display: block;
+
+    margin: 0 7px;
+
+    cursor: pointer;
+
+    color: $mono-black;
+  }
+
+  &__cart-quantity {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+
+    width: 15px;
+    height: 15px;
+    padding-top: 1px;
+
+    text-align: center;
+
+    color: $mono-white;
+    border-radius: 50%;
+    // background: $main-color-green;
+
+    font-size: 13px;
+    font-weight: 500;
+  }
+}

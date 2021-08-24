@@ -1,0 +1,38 @@
+@import "../tokens/colors.scss";
+
+.main-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  background: $neutral-0;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex: 1 1 201px;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 160px;
+
+    border-right: 1px solid $mono-white;
+
+    &:last-of-type {
+      border-right: unset;
+    }
+  }
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+
+    margin-bottom: 30px;
+
+    color: $neutral-7;
+  }
+}
+
+.main-info-description {
+  margin-top: 10px;
+}

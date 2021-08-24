@@ -1,0 +1,74 @@
+@import "../tokens/colors.scss";
+
+.product-cart {
+  width: 270px;
+
+  &__image {
+    position: relative;
+
+    overflow: hidden;
+
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 4px;
+
+    &:hover .product-cart__action {
+      opacity: 1;
+    }
+  }
+
+  &__action {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    transition: 0.2s all;
+
+    opacity: 0;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  &__title {
+    color: $neutral-2;
+  }
+
+  &__amount {
+    color: $primary-4;
+
+    font-size: 18px;
+  }
+}
+
+.action {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 41px;
+    height: 41px;
+    margin-bottom: 9px;
+
+    cursor: pointer;
+
+    transition: 0.15s all;
+
+    color: $mono-white;
+
+    border-radius: 4px;
+    background-color: $primary-4;
+
+    &:hover {
+      background-color: $primary-5;
+    }
+  }
+}
