@@ -1,5 +1,5 @@
 export interface ImagePlaceholderProps {
-  url?: StaticImageData;
+  url?: any;
   alt?: string;
   className?: string;
 }

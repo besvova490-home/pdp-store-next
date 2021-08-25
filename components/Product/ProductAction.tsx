@@ -1,7 +1,7 @@
 //assets
 import { AiFillHeart } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoMdGitCompare } from "react-icons/io"; 
+import { IoMdGitCompare } from "react-icons/io";
 
 
 //styles
