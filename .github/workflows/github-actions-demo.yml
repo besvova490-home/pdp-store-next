@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on:
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   file_existence:
     steps:
