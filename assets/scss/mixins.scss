@@ -15,55 +15,55 @@
 }
 
 @mixin bkp-xs-1 {
-  @media screen and (min-width: $xs-1) {
+  @media screen and (max-width: $xs-1) {
     @content;
   }
 }
 
 @mixin bkp-xs-2 {
-  @media screen and (min-width: $xs-2) {
+  @media screen and (max-width: $xs-2) {
     @content;
   }
 }
 
 @mixin bkp-xs-3 {
-  @media screen and (min-width: $xs-3) {
+  @media screen and (max-width: $xs-3) {
     @content;
   }
 }
 
 @mixin bkp-xs-4 {
-  @media screen and (min-width: $xs-4) {
+  @media screen and (max-width: $xs-4) {
     @content;
   }
 }
 
 @mixin bkp-sm {
-  @media screen and (min-width: $sm) {
+  @media screen and (max-width: $sm) {
     @content;
   }
 }
 
 @mixin bkp-md {
-  @media screen and (min-width: $md) {
+  @media screen and (max-width: $md) {
     @content;
   }
 }
 
 @mixin bkp-lg {
-  @media screen and (min-width: $lg) {
+  @media screen and (max-width: $lg) {
     @content;
   }
 }
 
 @mixin bkp-xl {
-  @media screen and (min-width: $xl) {
+  @media screen and (max-width: $xl) {
     @content;
   }
 }
 
 @mixin bkp-xxl {
-  @media screen and (min-width: $xxl) {
+  @media screen and (max-width: $xxl) {
     @content;
   }
 }

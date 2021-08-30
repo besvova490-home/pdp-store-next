@@ -1,0 +1,86 @@
+@import "../tokens/colors.scss";
+
+.renoshop-side-bar {
+  &__block {
+    padding: 30px 0;
+
+    border-bottom: 1px solid $neutral-0;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  &__grid-type-1 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 100%;
+
+    justify-content: flex-start;
+  }
+
+  &__price-filter-controls {
+    display: grid;
+    grid-template-columns: 111px 111px auto;
+    grid-gap: 4px;
+  }
+
+  &__price-filter-input {
+    width: 100% !important;
+  }
+
+  &__block-list {
+    display: grid;
+    grid-template-columns: 100%;
+
+    margin-top: 28px;
+    grid-gap: 28px;
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__block {
+    .renoshop-side-bar__block-content {
+      margin-top: 20px;
+    }
+  }
+
+  &__categories-item {
+    position: relative;
+
+    padding-left: 15px;
+
+    cursor: pointer;
+
+    color: $neutral-4;
+
+    font-size: 14px;
+
+    &::before {
+      position: absolute;
+      top: 4px;
+      left: 0;
+
+      width: 7px;
+      height: 7px;
+
+      content: "";
+
+      background: $neutral-1;
+    }
+
+    &_active {
+      color: $primary-4;
+
+      font-weight: 500;
+    }
+  }
+}

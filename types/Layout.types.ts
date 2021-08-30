@@ -2,5 +2,10 @@ import { ReactNode } from "react";
 
 
 export interface BaseLayoutInterface {
-	children: ReactNode,
+	children: ReactNode;
 }
+
+export interface ProductsLayoutInterface {
+	children: ReactNode;
+}
+

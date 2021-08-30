@@ -1,0 +1,9 @@
+.layout-with-side-bar {
+  &__content {
+    display: grid;
+    grid-template-columns: 270px auto;
+
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

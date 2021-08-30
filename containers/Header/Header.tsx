@@ -13,7 +13,7 @@ function Header(): JSX.Element {
     <header className="header">
       <div className="container">
         <div className="header__contacts">
-          <div className="contacts__item">
+          <div className="contacts__item contacts__phone-email">
             <span className="header__phone">
               <FaPhoneAlt className="icon-component-base" />+1 123 456 789
             </span>

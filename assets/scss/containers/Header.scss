@@ -1,16 +1,36 @@
 @import "../tokens/colors.scss";
+@import "../mixins.scss";
 
 .header {
   &__contacts {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: space-between;
+    grid-template-columns: auto auto;
 
     height: 60px;
     padding: 0 50px;
 
     color: $mono-white;
     background: $mono-black;
+
+    @include bkp-md {
+      display: flex;
+      flex-direction: column;
+
+      height: auto;
+
+      padding: 20px 0;
+
+      .contacts__socials {
+        padding-top: 20px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
   }
 
   &__phone,
@@ -22,11 +42,19 @@
   }
 
   &__navigation {
-    display: flex;
+    display: grid;
     justify-content: space-between;
+
+    grid-template-columns: auto auto auto;
 
     width: 100%;
     padding: 30px 50px;
+
+    @include bkp-md {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }
 
@@ -52,6 +80,18 @@
 
     border-right: 1px solid $mono-white;
   }
+
+  &__phone-email {
+    @include bkp-xs-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+
+      .contacts__vertical-line {
+        display: none;
+      }
+    }
+  }
 }
 
 .socials {
@@ -64,11 +104,51 @@
 
 .navigation {
   &__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+
+    margin: 0;
 
     font-family: Inter;
+
+    font-size: 14px;
+    font-weight: 500;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, auto);
+
+    @include bkp-xs-4 {
+      justify-content: center;
+
+      margin: 20px 0;
+
+      font-size: 18px;
+      grid-template-columns: 1fr;
+
+      grid-gap: 20px;
+    }
+  }
+
+  &__menu {
+    @include bkp-md {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__actions {
+    @include bkp-xs-4 {
+      grid-gap: 10px;
+      grid-template-columns: auto auto auto;
+
+      margin: 0;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      .actions__item svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &__logo {
@@ -80,14 +160,10 @@
   }
 
   &__link {
-    margin: 0 10px;
-
     cursor: pointer;
     transition: all 0.3s;
+    text-align: center;
     text-transform: uppercase;
-
-    font-size: 14px;
-    font-weight: 500;
 
     &:hover {
       color: $primary-4;

@@ -1,0 +1,19 @@
+.product-card-simple {
+  display: flex;
+
+  margin-bottom: 30px;
+
+  &__image {
+    overflow: hidden;
+    flex: 0 0 80px;
+
+    height: 100px;
+    margin-right: 15px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

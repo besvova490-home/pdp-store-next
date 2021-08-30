@@ -6,7 +6,5 @@
 @import "./containers/Header.scss";
 @import "./containers/Footer.scss";
 @import "./components/IconComponent.scss";
-
-* {
-  font-family: Inter;
-}
+@import "./layout.scss";
+@import "./main.scss";
