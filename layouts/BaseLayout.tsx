@@ -10,9 +10,9 @@ function BaseLayout({ children }: BaseLayoutInterface): JSX.Element {
 
 
   return (
-    <div>
+    <div className="page-content">
       <Header/>
-      <div>
+      <div className="base-page-layout">
         { children }
       </div>
       <Footer/>

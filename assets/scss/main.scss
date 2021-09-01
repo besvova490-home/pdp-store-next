@@ -1,3 +1,26 @@
 * {
   font-family: Inter;
 }
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.base-page-layout {
+  flex: 1 1 auto;
+}
+
+.custom-img {
+  position: relative !important;
+
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  object-fit: contain;
+}

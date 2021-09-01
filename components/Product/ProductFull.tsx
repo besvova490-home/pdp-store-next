@@ -1,10 +1,12 @@
-import { Text, Button, IconButton } from "coax-ui-lib";
-import { AiFillHeart } from "react-icons/ai";
-import { FaShoppingCart } from "react-icons/fa";
-import { IoMdGitCompare } from "react-icons/io";
+import { Text } from "coax-ui-lib";
 
 //components
 import ImagePlaceholder from "../ImagePlaceholder";
+
+//elements
+import AddToCardButton from "../../elements/Buttons/AddToCardButton";
+import AddToWithButton from "../../elements/Buttons/AddToWithButton";
+import CompareButton from "../../elements/Buttons/CompareButton";
 
 //styles
 import styles from "../../assets/scss/components/Product.module.scss";
@@ -27,11 +29,11 @@ function ProductFull(): JSX.Element {
           normal distribution of letters, as opposed to using 'Content here,
           content here', making it look like readable English.
         </p>
-        <p>Shoes, T-Shirt teen</p>
+        <Text type="secondary">Shoes, T-Shirt teen</Text>
         <div className={styles["product-cart-full__btn-group"]}>
-          <Button label="Add to cart" icon={<FaShoppingCart/>} size="large" type="default"/>
-          <IconButton icon={<AiFillHeart/>} size="large" type="default"/>
-          <IconButton icon={<IoMdGitCompare/>} size="large" type="default"/>
+          <AddToCardButton onClick={() => null}/>
+          <AddToWithButton onClick={() => null}/>
+          <CompareButton onClick={() => null}/>
         </div>
       </div>
     </div>

@@ -1,0 +1,87 @@
+@import "../tokens/colors.scss";
+
+.renoshop-single-product {
+  max-width: 1200px;
+  margin: 50px auto;
+
+  &__content {
+
+  }
+
+  &__main-info {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-gap: 51px;
+  }
+
+  &__image {
+    position: relative;
+
+    width: 100%;
+    min-height: 400px;
+  }
+
+  &__images-block {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 100%;
+  }
+
+  &__title {
+    color: $neutral-7;
+
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__price-rating {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    padding-bottom: 50px;
+
+    border-bottom: 1px solid $neutral-0;
+
+    line-height: 24px;
+  }
+
+  &__filters {
+    display: grid;
+    grid-template-columns: 270px 270px;
+    grid-gap: 20px;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-top: 50px;
+    grid-template-areas:
+      "column-0-row-0 column-1-row-0"
+      "column-0-row-1 ."
+      "column-0-row-2 .";
+  }
+
+  &__btn-group {
+    grid-area: column-0-row-2;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__carousel {
+    width: 100%;
+  }
+}
+
+.filters-first-select {
+  grid-area: column-0-row-0;
+}
+
+.filters-second-select {
+  grid-area: column-1-row-0;
+}
+
+.filters-amount-input {
+  grid-area: column-0-row-1;
+}

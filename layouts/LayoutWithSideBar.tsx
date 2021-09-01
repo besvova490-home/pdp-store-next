@@ -11,7 +11,7 @@ function LayoutWithSideBar({ children }: BaseLayoutInterface): JSX.Element {
 
 
   return (
-    <div>
+    <div className="page-content">
       <Header/>
       <p>pagination</p>
       <div className="layout-with-side-bar__content">

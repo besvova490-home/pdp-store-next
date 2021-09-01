@@ -15,8 +15,8 @@
 
   &__display-settings {
     display: flex;
-    flex: 1 1 auto;
     align-items: center;
+    flex: 1 1 auto;
     justify-content: space-between;
 
     padding-right: 40px;
@@ -24,23 +24,23 @@
 
   &__grid-blocks {
     display: grid;
+
+    margin-bottom: 100px;
+
+    padding: 20px 40px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 40px;
-
-    padding: 20px 40px;
-
-    margin-bottom: 100px;
   }
 
   &__grid-lines {
     display: grid;
-    grid-template-columns: 100%;
-    grid-gap: 30px;
-
-    padding: 20px 40px;
 
     margin-bottom: 100px;
+
+    padding: 20px 40px;
+    grid-template-columns: 100%;
+    grid-gap: 30px;
   }
 
   &__grid-actions {

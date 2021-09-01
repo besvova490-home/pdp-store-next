@@ -9,3 +9,4 @@ The file contains important changes from version to version
 - created sede bar
 - created products list page
 - created displaying types (full product/base product))
+- created carousel and single product page

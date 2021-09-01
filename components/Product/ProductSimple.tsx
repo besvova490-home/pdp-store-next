@@ -23,6 +23,6 @@ function ProductSimple(): JSX.Element {
       </a>
     </Link>
   );
-};
+}
 
 export default ProductSimple;
