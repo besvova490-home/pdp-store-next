@@ -4,8 +4,10 @@
   max-width: 1200px;
   margin: 50px auto;
 
-  &__content {
-
+  &__block {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 48px;
   }
 
   &__main-info {
@@ -19,6 +21,12 @@
 
     width: 100%;
     min-height: 400px;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    user-select: none;
   }
 
   &__images-block {

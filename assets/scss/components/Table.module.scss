@@ -1,0 +1,33 @@
+@import "../tokens/colors.scss";
+
+.renoshop-table {
+  width: 100%;
+
+  table-layout: fixed;
+  border-spacing: 0;
+
+  border-collapse: collapse;
+
+  &__header-cell {
+    padding: 25px 0;
+
+    text-align: center;
+
+    border: 1px solid $neutral-1;
+
+    font-weight: 500;
+
+    &:first-of-type {
+      border-right: unset;
+    }
+  }
+
+  &__body-cell {
+    padding: 15px 25px;
+
+    vertical-align: middle;
+
+    border: 1px solid $neutral-1;
+    border-top: unset;
+  }
+}

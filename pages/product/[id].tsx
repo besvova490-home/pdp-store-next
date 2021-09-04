@@ -4,8 +4,11 @@ import Image from "next/image";
 //layouts
 import BaseLayout from "../../layouts/BaseLayout";
 
+//container
+import { ProductReview } from "../../containers";
+
 //components
-import { CarouselSimple } from "../../components/Carousel";
+import { CarouselSimple, Carousel } from "../../components/Carousel";
 
 //elements
 import AddToCardButton from "../../elements/Buttons/AddToCardButton";
@@ -61,9 +64,12 @@ function ProductTemplate(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className={styles["renoshop-single-product__block"]}></div>
-          <div className={styles["renoshop-single-product__block"]}></div>
-          <div className={styles["renoshop-single-product__block"]}></div>
+          <div className={styles["renoshop-single-product__block"]}>
+            <ProductReview/>
+          </div>
+          <div className={styles["renoshop-single-product__block"]}>
+            <Carousel title="Related Products"/>
+          </div>
         </div>
       </section>
     </BaseLayout>

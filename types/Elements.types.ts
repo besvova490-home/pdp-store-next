@@ -1,5 +1,6 @@
 export interface BaseButtonProps {
   onClick: () => void;
+  size?: "large" | "middle" | "small"
 }
 
 

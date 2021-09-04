@@ -4,11 +4,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IconButton, Text, classNames } from "coax-ui-lib";
 
 //components
-import Product from "../components/Product";
-import ProductFull from "../components/Product/ProductFull";
+import Product from "../../components/Product";
+import ProductFull from "../../components/Product/ProductFull";
 
 //styles
-import styles from "../assets/scss/components/ProductsList.module.scss";
+import styles from "../../assets/scss/components/ProductsList.module.scss";
 
 
 function ProductList(): JSX.Element {
