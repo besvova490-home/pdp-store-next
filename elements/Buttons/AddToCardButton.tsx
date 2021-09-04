@@ -5,11 +5,11 @@ import { FaShoppingCart } from "react-icons/fa";
 import { BaseButtonProps } from "../../types/Elements.types";
 
 
-function AddToCardButton({ onClick }: BaseButtonProps): JSX.Element {
+function AddToCardButton({ onClick, size = "large" }: BaseButtonProps): JSX.Element {
 
   
   return (
-    <Button label="Add to cart" icon={<FaShoppingCart/>} size="large" type="default" onClick={onClick}/>
+    <Button label="Add to cart" icon={<FaShoppingCart/>} size={size} type="default" onClick={onClick}/>
   );
 }
 

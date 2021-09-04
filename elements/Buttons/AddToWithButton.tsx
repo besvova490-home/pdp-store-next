@@ -5,11 +5,11 @@ import { AiFillHeart } from "react-icons/ai";
 import { BaseButtonProps } from "../../types/Elements.types";
 
 
-function AddToWithButton({ onClick }: BaseButtonProps): JSX.Element {
+function AddToWithButton({ onClick, size = "large" }: BaseButtonProps): JSX.Element {
 
 
   return (
-    <IconButton icon={<AiFillHeart/>} size="large" type="default" onClick={onClick}/>
+    <IconButton icon={<AiFillHeart/>} size={size} type="default" onClick={onClick}/>
   );
 }
 

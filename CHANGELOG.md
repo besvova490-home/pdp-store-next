@@ -10,3 +10,6 @@ The file contains important changes from version to version
 - created products list page
 - created displaying types (full product/base product))
 - created carousel and single product page
+- created table & column components
+- created wishlist page
+- created cart page
