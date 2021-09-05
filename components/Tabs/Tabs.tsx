@@ -8,7 +8,8 @@ function Tabs({ children }: any): JSX.Element {
     <div>
       <div>
         {
-          children.map((item, index) => <span onClick={() => setActivePanel(index)}>{ item.props.label }</span>)
+          children.map(
+            (item: any, index: number) => <span onClick={() => setActivePanel(index)}>{ item.props.label }</span>)
         }
       </div>
       <div>
