@@ -1,5 +1,5 @@
 import { InputNumber } from "coax-ui-lib";
-import Image from "next/image";
+import Head from "next/head";
 
 //layouts
 import BaseLayout from "../../layouts/BaseLayout";
@@ -24,13 +24,41 @@ function ProductTemplate(): JSX.Element {
 
   return (
     <BaseLayout>
+      <Head>
+        <title>Test</title>
+        <meta charSet="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="csrf_token" content="" />
+        <meta property="type" content="website" />
+        <meta property="url" content="http://localhost:3000/product/1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="_token" content="" />
+        <meta name="robots" content="noodp" />
+        <meta property="title" content={"test"} />
+        <meta property="quote" content={"test"} />
+        <meta name="description" content={"LOrem ipsum"} />
+        <meta property="image" content={"https://picsum.photos/200/300?grayscale"} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={"Test"} />
+        <meta property="og:quote" content={"test"} />
+        <meta property="og:hashtag" content={"#test"} />
+        <meta property="og:image" content={"https://picsum.photos/200/300?grayscale"} />
+        <meta content="image/*" property="og:image:type" />
+        <meta property="og:url" content={"http://localhost:3000/product/1"} />
+        <meta property="og:site_name" content="CampersTribe" />
+        <meta property="og:description" content={"LOrem ipsum"} />
+      </Head>
       <section className={styles["renoshop-single-product"]}>
         <p>paginatio</p>
         <div className={styles["renoshop-single-product__content"]}>
           <div className={`${styles["renoshop-single-product__block"]} ${styles["renoshop-single-product__main-info"]}`}>
             <div className={styles["renoshop-single-product__images-block"]}>
               <div className={styles["renoshop-single-product__image"]}>
-                <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+                <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
               </div>
               <div className={styles["renoshop-single-product__carousel"]}>
                 <CarouselSimple/>

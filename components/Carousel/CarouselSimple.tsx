@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import Image from "next/image";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 
 //styles
@@ -21,25 +20,25 @@ function CarouselSimple(): JSX.Element {
       </div>
       <div className={styles["renoshop-carousel-siple__content"]} ref={carouselRef}>
         <div className={styles["renoshop-carousel-siple__content-image"]}>
-          <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+          <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
         </div>
         <div className={styles["renoshop-carousel-siple__content-image"]}>
-          <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+          <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
         </div>
         <div className={styles["renoshop-carousel-siple__content-image"]}>
-          <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+          <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
         </div>
         <div className={styles["renoshop-carousel-siple__content-image"]}>
-          <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+          <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
         </div>
         <div className={styles["renoshop-carousel-siple__content-image"]}>
-          <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+          <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
         </div>
         <div className={styles["renoshop-carousel-siple__content-image"]}>
-          <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+          <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
         </div>
         <div className={styles["renoshop-carousel-siple__content-image"]}>
-          <Image loader={() => "https://picsum.photos/200/300"} src={"https://picsum.photos/200/300"} alt={""} layout="fill" className="custom-img"/>
+          <img src={"https://picsum.photos/200/300"} alt={""} className="custom-img"/>
         </div>
       </div>
       <div className={`${styles["renoshop-carousel-siple__control"]} ${styles["renoshop-carousel-siple__control-next"]}`} onClick={() => handleScroll(85)}>
