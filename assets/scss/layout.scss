@@ -9,3 +9,33 @@
     margin: 0 auto;
   }
 }
+
+.auth-form-layout {
+  margin: 100px;
+
+  display: grid;
+  grid-template-columns: 450px;
+  justify-content: center;
+  grid-gap: 20px;
+  align-items: center;
+
+  &__content {
+    padding: 40px;
+    width: 100%;
+  
+    border: 1px solid $neutral-0;
+    border-radius: 4px;
+  
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
+  }
+
+  &__links-group {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-gap: 20px;
+  }
+}

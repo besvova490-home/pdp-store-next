@@ -8,3 +8,12 @@ export interface ButtonProps {
 	className?: string;
 	label?: string;
 }
+
+export interface LinkCustomInterface {
+  href: string,
+  as?: string,
+  className?: string,
+  onCLick?: () => void,
+  label?: string | number,
+  size?: "s" | "l"
+}

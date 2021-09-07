@@ -1,0 +1,41 @@
+@import "../tokens/colors.scss";
+
+.renoshop-comparison-table {
+  width: 100%;
+
+  table-layout: fixed;
+  border-spacing: 0;
+
+  border-collapse: collapse;
+
+  &__cell {
+    padding: 20px 20px;
+    border: 1px solid $neutral-0;
+
+    &_center {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__cell-img {
+    overflow: hidden;
+
+    width: 80px;
+    height: 100px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__cell-btn-group {
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-gap: 20px;
+
+    justify-content: center;
+  }
+}
