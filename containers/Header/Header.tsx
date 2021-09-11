@@ -1,9 +1,12 @@
 import Link from "next/link";
 
+//element
+import LinkCustom from "../../elements/LinkCustom";
+
 //assets
 import { FaPhoneAlt, FaFacebookF, FaInstagram, FaPinterest, FaShoppingCart, FaSearch } from "react-icons/fa";
 import { AiOutlineMail, AiOutlineTwitter, AiFillYoutube } from "react-icons/ai";
-import { CgMenuGridR } from "react-icons/cg";
+import { RiLoginCircleFill } from "react-icons/ri";
 
 
 function Header(): JSX.Element {
@@ -45,9 +48,13 @@ function Header(): JSX.Element {
             <Link href={"/"}><a className="logo"><span className="primary-color">Renoshop</span>bee</a></Link>
           </div>
           <ul className="navigation__item navigation__menu">
-            <li className="navigation__link navigation__link_active">Home</li>
-            <li className="navigation__link">Women</li>
-            <li className="navigation__link">Men</li>
+            <li>
+              <LinkCustom label="Home" className="navigation__link navigation__link_active" href="/"/>
+            </li>
+            <li>
+              <LinkCustom label="Blog" className="navigation__link" href="/blog"/>
+            </li>
+            <li className="navigation__link">Store</li>
             <li className="navigation__link">Kids</li>
             <li className="navigation__link">Jewellery</li>
             <li className="navigation__link">accessories</li>
@@ -62,9 +69,9 @@ function Header(): JSX.Element {
             <div className="actions__item">
               <FaSearch className={"icon-component-base"}/>
             </div>
-            <div className="actions__item">
-              <CgMenuGridR className={"icon-component-base"}/>
-            </div>
+            <LinkCustom href="/login" className="actions__item">
+              <RiLoginCircleFill className={"icon-component-base"}/>
+            </LinkCustom>
           </div>
         </div>
       </div>

@@ -13,3 +13,6 @@ The file contains important changes from version to version
 - created table & column components
 - created wishlist page
 - created cart page
+- created comparison page
+- created login & register pages
+- created user profile page

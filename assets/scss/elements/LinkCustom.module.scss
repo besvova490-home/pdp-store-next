@@ -1,0 +1,17 @@
+@import "../tokens/colors.scss";
+
+.renoshop-link {
+  color: $neutral-4;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  &:hover {
+    color: $primary-4;
+  }
+
+  &_size-l {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
