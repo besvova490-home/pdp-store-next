@@ -50,6 +50,8 @@
     width: 100%;
     padding: 30px 50px;
 
+    border-bottom: 1px solid $neutral-1;
+
     @include bkp-md {
       display: flex;
       align-items: center;

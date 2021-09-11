@@ -8,7 +8,7 @@ import { LinkCustomInterface } from "../types/Elements.types";
 import styles from "../assets/scss/elements/LinkCustom.module.scss";
 
 
-function LinkCustom({ href, as, className, onCLick, label, size = "s" }: LinkCustomInterface): JSX.Element {
+function LinkCustom({ href, as, className, onCLick, label, children, size = "s" }: LinkCustomInterface): JSX.Element {
 
   const linkClassName = classNames(
     className,
@@ -17,7 +17,7 @@ function LinkCustom({ href, as, className, onCLick, label, size = "s" }: LinkCus
   );
 
   
-  return <Link href={href || "#"} as={as || href}><a className={linkClassName} onClick={() => onCLick && onCLick()}>{label}</a></Link>;
+  return <Link href={href || "#"} as={as || href}><a className={linkClassName} onClick={() => onCLick && onCLick()}>{ children || label}</a></Link>;
 }
 
 

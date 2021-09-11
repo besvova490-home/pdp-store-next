@@ -15,3 +15,4 @@ The file contains important changes from version to version
 - created cart page
 - created comparison page
 - created login & register pages
+- created user profile page

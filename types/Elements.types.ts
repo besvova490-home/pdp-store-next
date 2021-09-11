@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface BaseButtonProps {
   onClick: () => void;
   size?: "large" | "middle" | "small"
@@ -15,5 +17,6 @@ export interface LinkCustomInterface {
   className?: string,
   onCLick?: () => void,
   label?: string | number,
-  size?: "s" | "l"
+  size?: "s" | "l",
+  children?: ReactNode | Array<ReactNode>;
 }

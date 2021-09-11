@@ -1,0 +1,30 @@
+@import "../tokens/colors.scss";
+
+.renoshop-profile {
+  &__title {
+    padding: 20px 0;
+
+    border-bottom: 1px solid $neutral-1;
+  }
+
+  &__form-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 50px 20px;
+
+    margin-bottom: 20px;
+
+    padding: 20px 0;
+
+    &_one-column {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+  }
+
+  &__input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
