@@ -9,8 +9,8 @@ function LoginForm():JSX.Element {
 
   return (
     <>
-      <Input placeholder="Email"/>
-      <Input placeholder="Password"/>
+      <Input placeholder="Email" fullWidth/>
+      <Input placeholder="Password" fullWidth/>
       <LinkCustom href="#" label="Forgot your password?"/>
       <Button label="Login" size="large"/>
     </>

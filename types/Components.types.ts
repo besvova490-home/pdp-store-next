@@ -28,3 +28,10 @@ export interface TableColumnProps {
   render?: (rowObj: TableRow) => JSX.Element;
 }
 
+export interface SingleReviewProps {
+  authorUrl?: string;
+  authorName?: string;
+  reviewText?: string;
+  rating: number;
+  date: string;
+}

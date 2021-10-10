@@ -1,18 +1,31 @@
+import { Tabs, Panel } from "coax-ui-lib";
+
 //components
-import { Tabs, TabPanel } from "../../components/Tabs";
+import SingleReview from "./SingleReview";
+import ProductReviewForm from "./ProductReviewForm";
+
+//styles
+import styles from "../../assets/scss/containers/ProductPage.module.scss";
 
 
-function ProductReview() {
-
+function ProductReview({ description }: { description: string }): JSX.Element {
 
   return (
     <div>
       <Tabs>
-        <TabPanel label="Panel 1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint id fugiat praesentium culpa incidunt quae eligendi non corporis nisi, sequi minus natus maxime soluta neque perferendis rerum laboriosam assumenda repellat.</TabPanel>
-        <TabPanel label="Panel 2">Test</TabPanel>
-        <TabPanel label="Panel 3"/>
+        <Panel tab="Description">
+          { description }
+        </Panel>
+        <Panel tab="Reviews (2)">
+          <div className={styles["product-reviews-list"]}>
+            <SingleReview rating={2} date={"12"}/>
+            <SingleReview rating={2} date={"12"}/>
+          </div>
+          <div className={styles["product-review-form"]}>
+            <ProductReviewForm/>
+          </div>
+        </Panel>
       </Tabs>
-      ProductReview
     </div>
   );
 }

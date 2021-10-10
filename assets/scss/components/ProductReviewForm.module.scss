@@ -1,0 +1,28 @@
+@import "../../scss/tokens/colors.scss";
+
+.product-review-form {
+  &__input-group {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-gap: 20px;
+  }
+
+  &__review-info-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: $neutral-4;
+  }
+
+  &__review-rating {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  &__review-info {
+    margin-bottom: 20px;
+  }
+}

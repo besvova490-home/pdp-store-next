@@ -1,0 +1,31 @@
+@import "../../scss/tokens/colors.scss";
+
+.renoshop-review {
+  display: grid;
+  grid-template-columns: 81px 1fr;
+  grid-gap: 15px;
+
+
+  &__image {
+    background-color: $neutral-0;
+  }
+
+  &__author-image {
+    max-height: 81px !important;
+  }
+
+  &__content-header {
+    display: flex;
+  }
+
+  &__content-dividing-line {
+    margin: 0 20px;
+    width: 1px;
+    background-color: $neutral-1;
+  }
+
+  &__content-text {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}

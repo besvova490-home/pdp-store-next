@@ -23,7 +23,7 @@ function SubscribeAndClients(): JSX.Element {
             register your email for news and special offers</Text>
           <div className={styles.subscribe__form}>
             <Input placeholder="E-mail address ..."/>
-            <Button label="GET COUPON NOW" size="large"/>
+            <Button label="GET COUPON NOW"/>
           </div>
         </div>
       </div>

@@ -4,10 +4,10 @@ import Footer from "../containers/Footer";
 import SideBar from "../containers/SideBar";
 
 //interface
-import { BaseLayoutInterface } from "../types/Layout.types";
+import { LayoutWithSideBarProps } from "../types/Layout.types";
 
 
-function LayoutWithSideBar({ children }: BaseLayoutInterface): JSX.Element {
+function LayoutWithSideBar({ children, categoriesList }: LayoutWithSideBarProps): JSX.Element {
 
 
   return (
@@ -15,7 +15,7 @@ function LayoutWithSideBar({ children }: BaseLayoutInterface): JSX.Element {
       <Header/>
       <p>pagination</p>
       <div className="layout-with-side-bar__content">
-        <SideBar/>
+        <SideBar categoriesList={categoriesList}/>
         <main>
           { children }
         </main>

@@ -5,12 +5,13 @@ import { FaSearch } from "react-icons/fa";
 import SideBarCategoryItem from "./components/SideBarCategoryItem";
 import ProductSimple from "../../components/Product/ProductSimple";
 
+import { Category } from "../../types/ResponsesTypes.types";
+
 //styles
 import styles from "../../assets/scss/containers/SideBar.module.scss";
 import ImagePlaceholder from "../../components/ImagePlaceholder";
 
-
-function SideBar(): JSX.Element {
+function SideBar({ categoriesList }: { categoriesList: Array<Category> }): JSX.Element {
 
 
   return (
@@ -18,20 +19,18 @@ function SideBar(): JSX.Element {
       <div className={styles["renoshop-side-bar__block"]}>
         <Text className="bold-text text-uppercase" size="s">Categories</Text>
         <div className={`${styles["renoshop-side-bar__block-content"]} ${styles["renoshop-side-bar__block-list"]}`}>
-          <SideBarCategoryItem label="Accessories" count={15} active/>
-          <SideBarCategoryItem label="Accessories" count={15}/>
-          <SideBarCategoryItem label="Accessories" count={15}/>
-          <SideBarCategoryItem label="Accessories" count={15}/>
-          <SideBarCategoryItem label="Accessories" count={15}/>
-          <SideBarCategoryItem label="Accessories" count={15}/>
-          <SideBarCategoryItem label="Accessories" count={15}/>
+          {
+            categoriesList.map(category => (
+              <SideBarCategoryItem label={category.title} count={category.booksCounter}/>
+            ))
+          }
         </div>
       </div>
       <div className={styles["renoshop-side-bar__block"]}>
         <Text className="bold-text text-uppercase" size="s">Price Filter</Text>
         <div className={`${styles["renoshop-side-bar__price-filter-controls"]} ${styles["renoshop-side-bar__block-content"]}`}>
-          <Input value={"$100"} className={styles["renoshop-side-bar__price-filter-input"]}/>
-          <Input value={"$100"} className={styles["renoshop-side-bar__price-filter-input"]}/>
+          <Input value={"$100"} className={styles["renoshop-side-bar__price-filter-input"]} fullWidth/>
+          <Input value={"$100"} className={styles["renoshop-side-bar__price-filter-input"]} fullWidth/>
           <IconButton icon={<FaSearch/>}/>
         </div>
       </div>

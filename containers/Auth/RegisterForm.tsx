@@ -9,12 +9,12 @@ function RegisterForm():JSX.Element {
 
   return (
     <>
-      <Input placeholder="First Name"/>
-      <Input placeholder="Last Name"/>
-      <Input placeholder="Email"/>
-      <Input placeholder="Phone Number"/>
-      <Input placeholder="Password"/>
-      <Input placeholder="Password Confirm"/>
+      <Input placeholder="First Name" fullWidth/>
+      <Input placeholder="Last Name" fullWidth/>
+      <Input placeholder="Email" fullWidth/>
+      <Input placeholder="Phone Number" fullWidth/>
+      <Input placeholder="Password" fullWidth type="password"/>
+      <Input placeholder="Password Confirm" fullWidth type="password"/>
       <Checkbox label="Newsletter Subscribe"/>
       <LinkCustom href="/login" label="Already have an account? Sign in"/>
       <Button label="Register" size="large"/>

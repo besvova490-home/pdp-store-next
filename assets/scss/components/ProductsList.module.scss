@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 100%;
   grid-gap: 30px;
+  margin-bottom: 100px;
 
   &__top {
     display: flex;
@@ -22,10 +23,15 @@
     padding-right: 40px;
   }
 
+  &__sort-by {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    grid-gap: 10px;
+  }
+
   &__grid-blocks {
     display: grid;
-
-    margin-bottom: 100px;
 
     padding: 20px 40px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -35,8 +41,6 @@
 
   &__grid-lines {
     display: grid;
-
-    margin-bottom: 100px;
 
     padding: 20px 40px;
     grid-template-columns: 100%;
@@ -69,5 +73,11 @@
       opacity: 1;
       color: $primary-4;
     }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

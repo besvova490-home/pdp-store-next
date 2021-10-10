@@ -54,7 +54,9 @@ function Header(): JSX.Element {
             <li>
               <LinkCustom label="Blog" className="navigation__link" href="/blog"/>
             </li>
-            <li className="navigation__link">Store</li>
+            <li>
+              <LinkCustom label="Store" className="navigation__link" href="/category/all"/>
+            </li>
             <li className="navigation__link">Kids</li>
             <li className="navigation__link">Jewellery</li>
             <li className="navigation__link">accessories</li>

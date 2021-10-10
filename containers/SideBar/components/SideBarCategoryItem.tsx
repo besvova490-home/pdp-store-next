@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 //interface
 import { SideBarCategoryItemInterface } from "../../../types//Components.types";
 
@@ -10,7 +12,9 @@ function SideBarCategoryItem({ label, count, active }: SideBarCategoryItemInterf
 
   return (
     <div className={`${styles["renoshop-side-bar__categories-item"]} ${active ? styles["renoshop-side-bar__categories-item_active"] : ""}`}>
-      <span>{ label }</span>
+      <Link href={`/category/${label}`}>
+        <a className={styles["renoshop-side-bar__categories-item-label"]}>{ label }</a>
+      </Link>
       <span> ({ count })</span>
     </div>
   );
