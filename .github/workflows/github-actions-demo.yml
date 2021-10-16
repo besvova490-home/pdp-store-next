@@ -43,6 +43,6 @@ jobs:
       - name: Install packages
         run: npm ci
       - name: Run Tests 
-        run: npm run test:ci
+        run: npm run test
       - name: Run List 
-        run: npm run lint:ci
+        run: npm run lint
