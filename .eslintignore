@@ -24,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 tsconfig.json*
 next.config.js
+jest.config.js
