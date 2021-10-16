@@ -1,4 +1,4 @@
-import { Text, IconButton, Input, Checkbox } from "coax-ui-lib";
+import { Text, IconButton, Input, Checkbox } from "coax-ui-lib-0";
 import { FaSearch } from "react-icons/fa";
 
 //components

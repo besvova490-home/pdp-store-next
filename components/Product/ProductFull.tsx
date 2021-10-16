@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Text, Rating } from "coax-ui-lib";
+import { Text, Rating } from "coax-ui-lib-0";
 
 //components
 import ImagePlaceholder from "../ImagePlaceholder";

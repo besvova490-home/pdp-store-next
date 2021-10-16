@@ -1,4 +1,4 @@
-import { IconButton } from "coax-ui-lib";
+import { IconButton } from "coax-ui-lib-0";
 import { IoMdGitCompare } from "react-icons/io";
 
 //interface

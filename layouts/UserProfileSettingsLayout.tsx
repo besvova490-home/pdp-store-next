@@ -1,4 +1,4 @@
-import { Button } from "coax-ui-lib";
+import { Button } from "coax-ui-lib-0";
 
 //interface
 import { BaseLayoutInterface } from "../types/Layout.types";

@@ -52,14 +52,11 @@ function Header(): JSX.Element {
               <LinkCustom label="Home" className="navigation__link navigation__link_active" href="/"/>
             </li>
             <li>
-              <LinkCustom label="Blog" className="navigation__link" href="/blog"/>
-            </li>
-            <li>
               <LinkCustom label="Store" className="navigation__link" href="/category/all"/>
             </li>
-            <li className="navigation__link">Kids</li>
-            <li className="navigation__link">Jewellery</li>
-            <li className="navigation__link">accessories</li>
+            <li>
+              <LinkCustom label="Wishlist" className="navigation__link" href="/wishlist"/>
+            </li>
           </ul>
           <div className="navigation__item navigation__actions">
             <Link href={"/cart"}>

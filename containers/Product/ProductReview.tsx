@@ -1,4 +1,4 @@
-import { Tabs, Panel } from "coax-ui-lib";
+import { Tabs, Panel } from "coax-ui-lib-0";
 
 //components
 import SingleReview from "./SingleReview";

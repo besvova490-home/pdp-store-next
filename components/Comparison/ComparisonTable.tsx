@@ -1,4 +1,4 @@
-import { IconButton } from "coax-ui-lib";
+import { IconButton } from "coax-ui-lib-0";
 import { TiDeleteOutline } from "react-icons/ti";
 
 //components

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, DetailedHTMLProps, HTMLAttributes } from "react";
 
 export interface BaseButtonProps {
   onClick: () => void;
@@ -19,4 +19,9 @@ export interface LinkCustomInterface {
   label?: string | number,
   size?: "s" | "l",
   children?: ReactNode | Array<ReactNode>;
+}
+
+export interface AvatarInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  url?: string;
+  userName?: string;
 }

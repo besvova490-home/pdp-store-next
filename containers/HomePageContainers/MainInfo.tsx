@@ -1,4 +1,4 @@
-import { Text } from "coax-ui-lib";
+import { Text } from "coax-ui-lib-0";
 
 //assets
 import { FaTelegramPlane } from "react-icons/fa";

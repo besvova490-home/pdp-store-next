@@ -1,7 +1,7 @@
 import BuyNowButton from "../../elements/Buttons/BuyNowButton";
 
 //components
-import { Title, Text } from "coax-ui-lib";
+import { Title, Text } from "coax-ui-lib-0";
 
 //styles
 import styles from "../../assets/scss/containers/BestWoocommerce.module.scss";

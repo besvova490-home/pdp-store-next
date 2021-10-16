@@ -1,4 +1,4 @@
-import { Rating, Text } from "coax-ui-lib";
+import { Rating, Text } from "coax-ui-lib-0";
 
 //interfaces
 import { SingleReviewProps } from "../../types/Components.types";

@@ -1,4 +1,4 @@
-import { Title, Text, Input, Button } from "coax-ui-lib";
+import { Title, Text, Input, Button } from "coax-ui-lib-0";
 
 //components
 import ImagePlaceholder from "../../components/ImagePlaceholder";

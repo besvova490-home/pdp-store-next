@@ -1,4 +1,4 @@
-import { Text } from "coax-ui-lib";
+import { Text } from "coax-ui-lib-0";
 
 //interfaces
 import { AuthLayoutInterface } from "../types/Layout.types";

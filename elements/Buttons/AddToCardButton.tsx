@@ -1,4 +1,4 @@
-import { Button } from "coax-ui-lib";
+import { Button } from "coax-ui-lib-0";
 import { FaShoppingCart } from "react-icons/fa";
 
 //interface

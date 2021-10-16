@@ -1,4 +1,4 @@
-import { IconButton } from "coax-ui-lib";
+import { IconButton } from "coax-ui-lib-0";
 import { AiFillHeart } from "react-icons/ai";
 
 //interface

@@ -7,3 +7,18 @@
 
   min-height: 100%;
 }
+
+
+.renoshop-auth-form {
+  display: grid;
+
+  width: 100%;
+
+  border-radius: 4px;
+  grid-template-columns: 100%;
+  grid-gap: 20px;
+
+  &__row-center {
+    margin: 0 auto;
+  }
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IconButton, Text, classNames, Pagination, Select } from "coax-ui-lib";
+import { IconButton, Text, classNames, Pagination, Select } from "coax-ui-lib-0";
 
 //components
 import Product from "../../components/Product";

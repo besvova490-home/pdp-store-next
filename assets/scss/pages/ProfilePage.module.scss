@@ -9,7 +9,8 @@
 
   &__form-content {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(50px, auto);
     grid-gap: 50px 20px;
 
     margin-bottom: 20px;

@@ -1,4 +1,4 @@
-import { Title, Text } from "coax-ui-lib";
+import { Title, Text } from "coax-ui-lib-0";
 
 //components
 import Product from "../../components/Product";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { classNames } from "coax-ui-lib";
+import { classNames } from "coax-ui-lib-0";
 
 //interfaces
 import { LinkCustomInterface } from "../types/Elements.types";

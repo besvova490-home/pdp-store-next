@@ -1,5 +1,5 @@
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
-import { InputNumber, Rating } from "coax-ui-lib";
+import { InputNumber, Rating } from "coax-ui-lib-0";
 
 //layouts
 import BaseLayout from "../../layouts/BaseLayout";

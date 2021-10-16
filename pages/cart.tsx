@@ -1,4 +1,4 @@
-import { InputNumber, IconButton, Button, Input } from "coax-ui-lib";
+import { InputNumber, IconButton, Button, Input } from "coax-ui-lib-0";
 import { TiDeleteOutline } from "react-icons/ti";
 
 //layouts

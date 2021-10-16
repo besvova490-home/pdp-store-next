@@ -1,4 +1,4 @@
-import { Input, Text, Rating, TextArea, Button } from "coax-ui-lib";
+import { Input, Text, Rating, TextArea, Button } from "coax-ui-lib-0";
 
 //styles
 import styles from "../../assets/scss/components/ProductReviewForm.module.scss";

@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import Product from "../Product";
-import { classNames } from "coax-ui-lib";
+import { classNames } from "coax-ui-lib-0";
 
 //styles
 import styles from "../../assets/scss/components/Carousel.module.scss";
