@@ -23,9 +23,9 @@ function TopSalles(): JSX.Element {
           </Text>
         </div>
       </div>
-      <Product/>
-      <Product/>
-      <Product/>
+      <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+      <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+      <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
     </section>
   );
 }

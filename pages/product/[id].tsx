@@ -55,7 +55,7 @@ function ProductTemplate(props: BookFullObj): JSX.Element {
                   <div className={styles["renoshop-single-product__categories-authors-list"]}>
                     <p>Categories:</p>
                     <ul>
-                      { categories.map((category: string, index: number) => (
+                      { categories?.map((category: string, index: number) => (
                         <li key={`${category}-${index}`}>{category}</li>
                       ))}
                     </ul>
@@ -63,7 +63,7 @@ function ProductTemplate(props: BookFullObj): JSX.Element {
                   <div className={styles["renoshop-single-product__categories-authors-list"]}>
                     <p>Authors:</p>
                     <ul>
-                      { authors.map((author: string, index: number) => (
+                      { authors?.map((author: string, index: number) => (
                         <li key={`${author}-${index}`}>{author}</li>
                       ))}
                     </ul>

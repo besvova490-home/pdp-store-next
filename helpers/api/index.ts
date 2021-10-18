@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import Cookies from "universal-cookie";
 
 
@@ -13,9 +13,11 @@ function requestNewToken() {
   const cookies = new Cookies();
   const refreshToken = cookies.get("refreshToken");
 
-  return axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/token/`, { refreshToken: refreshToken }).then(res => {
-    cookies.set("accessToken", res.data.accessToken, { path: "/" });
-    cookies.set("refreshToken", res.data.refreshToken, { path: "/" });
+  return axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/token/`, { refreshToken: refreshToken }).then((res: AxiosResponse<{ accessToken: string; refreshToken: string }>) => {
+    const { data } = res;
+
+    cookies.set("accessToken", data.accessToken, { path: "/" });
+    cookies.set("refreshToken", data.refreshToken, { path: "/" });
   });
 }
 

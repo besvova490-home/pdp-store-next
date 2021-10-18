@@ -15,18 +15,15 @@ export default function FeaturedProducts(): JSX.Element {
         <Text type="primary" size="s" italic>Newest trends from top brands</Text>
       </div>
       <div className={`${styles["featured-products__products-grid"]}`}>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
       </div>
     </section>
   );

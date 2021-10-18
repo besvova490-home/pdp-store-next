@@ -40,6 +40,25 @@ const auth = {
     }
   },
 
+  async registerGoogle(data: { token: string }): Promise<void> {
+    const cookies = new Cookies();
+    
+    try {
+      const result = await fetch({
+        url: "/auth/register/google",
+        method: "POST",
+        data
+      });
+
+      cookies.set("accessToken", result.accessToken, { path: "/" });
+      cookies.set("refreshToken", result.refreshToken, { path: "/" });
+    } catch (e) {
+      if (e.response) {
+        throw e.response.data;
+      }
+    }
+  },
+
   async profile(): Promise<any> {
     try {
       const result = await fetch({

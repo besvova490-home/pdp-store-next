@@ -61,28 +61,28 @@ function Carousel({ title }: any): JSX.Element {
       </div>
       <div className={styles["renoshop-carousel__content"]} ref={carouselRef}>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
         <div className={styles["renoshop-carousel__item"]}>
-          <Product/>
+          <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
         </div>
       </div>
     </div>

@@ -21,4 +21,17 @@
   &__row-center {
     margin: 0 auto;
   }
+
+  &__socials-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__btn-group {
+    border-top: 1px solid $neutral-1;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 20px;
+    display: grid;
+    grid-gap: 10px;
+  }
 }

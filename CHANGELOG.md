@@ -16,3 +16,5 @@ The file contains important changes from version to version
 - created comparison page
 - created login & register pages
 - created user profile page
+- conected to the API
+- created Dockerfile and add git actions

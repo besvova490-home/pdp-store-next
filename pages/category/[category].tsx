@@ -51,7 +51,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
   return {
-    fallback: true,
+    fallback: false,
     paths: [
       { params: { category: "all" } },
       ...categoriesList.categories.map(category => ({ params: { category: category.title } })),

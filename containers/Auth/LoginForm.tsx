@@ -1,4 +1,4 @@
-import { Input, Button } from "coax-ui-lib-0";
+import { Input, Button, GoogleButton, FacebookButton, Text } from "coax-ui-lib-0";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
@@ -52,6 +52,13 @@ function LoginForm({ handleSubmit, loading, errors: responseErrors }: LoginForm)
           />
           <LinkCustom href="#" label="Forgot your password?"/>
           <Button label="Login" size="large" loading={loading}/>
+          <div className={styles["renoshop-auth-form__socials-container"]}>
+            <Text type="secondary" size="s">Login with</Text>
+            <div className={styles["renoshop-auth-form__btn-group"]}>
+              <GoogleButton label="Google"/>
+              <FacebookButton label="Facebook"/>
+            </div>
+          </div>
         </Form>
       )}
     </Formik>
