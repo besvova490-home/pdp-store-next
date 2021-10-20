@@ -46,9 +46,3 @@ jobs:
         run: npm run test
       - name: Run List 
         run: npm run lint
-      - name: Analize Analyze with SonarQube 
-        run: sonar-scanner \
-          -Dsonar.projectKey=pdp-store-next \
-          -Dsonar.sources=. \
-          -Dsonar.host.url=http://159.223.6.29:9000 \
-          -Dsonar.login=bd7000c40b17d9b4d6f9ddb1944974a7ed6b2aca
