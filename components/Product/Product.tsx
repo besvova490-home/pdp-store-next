@@ -13,6 +13,9 @@ import styles from "../../assets/scss/components/Product.module.scss";
 
 
 function Product({ id, title, amount, thumbnailLink, averageRating }: Book): JSX.Element {
+  if (!id) return;
+
+
   return (
     <div className={styles["product-cart"]}>
       <div className={styles["product-cart__image-container"]}>

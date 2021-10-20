@@ -11,7 +11,7 @@ import PageNotFoundIcon from "../components/IconComponents/PageNotFound";
 import styles from "../assets/scss/pages/NotFoundPage.module.scss";
 
 
-function PageNotFound(): JSX.Element {
+function PageNotFound() {
 
 
   return (
