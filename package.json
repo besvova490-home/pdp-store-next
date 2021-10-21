@@ -10,7 +10,8 @@
     "lint-fix": "next lint --fix",
     "style-lint": "stylelint \"**/*.scss\" --fix",
     "test-watch": "jest --watch",
-    "test": "jest --coverage"
+    "test:ci": "jest --coverage",
+    "test": "jest"
   },
   "jest": {
     "collectCoverage": true,
@@ -47,6 +48,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.2.5",
     "jest-dom": "^4.0.0",
+    "jest-sonar-reporter": "^2.0.0",
     "react-test-renderer": "^17.0.2",
     "sass": "^1.38.0",
     "stylelint": "^13.13.1",
