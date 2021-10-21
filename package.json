@@ -10,7 +10,11 @@
     "lint-fix": "next lint --fix",
     "style-lint": "stylelint \"**/*.scss\" --fix",
     "test-watch": "jest --watch",
-    "test": "jest"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testResultsProcessor": "jest-sonar-reporter"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
