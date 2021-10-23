@@ -1,5 +1,8 @@
 import fetch from "../index";
 
+//helpers
+import errorBoundary from "../../errorBoundary";
+
 export const general = {
   async uploadImage(data: File): Promise<{ name: string; url: string }> {
     try {
@@ -12,7 +15,7 @@ export const general = {
 
       return result;
     } catch (e) {
-      console.log(e);
+      errorBoundary(e);
     }
   }
 };

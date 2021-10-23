@@ -8,7 +8,7 @@ import { IoMdGitCompare } from "react-icons/io";
 import styles from "../../assets/scss/components/Product.module.scss";
 
 
-function ProductActions(): JSX.Element {
+function ProductActions({ inWishList }: { inWishList: boolean }): JSX.Element {
 
 
   return (

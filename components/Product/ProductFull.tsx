@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Text, Rating } from "coax-ui-lib-0";
+import { toast } from "react-toastify";
 
 //components
 import ImagePlaceholder from "../ImagePlaceholder";
@@ -12,14 +13,21 @@ import CompareButton from "../../elements/Buttons/CompareButton";
 //interfases
 import { Book } from "../../types/ResponsesTypes.types";
 
+//helpres
+import wishListApi from "../../helpers/api/items/wishList";
 
 //styles
 import styles from "../../assets/scss/components/Product.module.scss";
 
 
-function ProductFull(props: Book): JSX.Element {
-  const { id, title, amount, thumbnailLink, averageRating, shortDescription, pageCount } = props;
+function ProductFull(props: Book & { inWishList?: boolean }): JSX.Element {
+  const { id, title, amount, thumbnailLink, averageRating, shortDescription, pageCount, inWishList } = props;
 
+  const handleAddToWishList = () => {
+    wishListApi.addToMyWishList({ bookId: id })
+      .then(() => toast.success("Book added to your wish list"))
+      .catch(() => toast.error("Something goes wrong"));
+  };
 
   return (
     <div className={styles["product-cart-full"]}>
@@ -40,7 +48,7 @@ function ProductFull(props: Book): JSX.Element {
         <Text type="secondary">Total pages: {pageCount}</Text>
         <div className={styles["product-cart-full__btn-group"]}>
           <AddToCardButton onClick={() => null}/>
-          <AddToWithButton onClick={() => null}/>
+          <AddToWithButton onClick={handleAddToWishList} inWishList={inWishList}/>
           <CompareButton onClick={() => null}/>
         </div>
       </div>

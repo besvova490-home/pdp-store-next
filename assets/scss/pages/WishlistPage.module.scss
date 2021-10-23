@@ -58,6 +58,25 @@
 
     margin-top: 40px;
   }
+
+  &__grid-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  &__grid-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+  }
+
+  &__secondary-text {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    color: $neutral-3;
+  }
 }
 
 .oreder-form {

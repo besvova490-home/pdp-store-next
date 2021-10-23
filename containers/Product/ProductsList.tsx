@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconButton, Text, classNames, Pagination, Select } from "coax-ui-lib-0";
@@ -6,6 +6,9 @@ import { IconButton, Text, classNames, Pagination, Select } from "coax-ui-lib-0"
 //components
 import Product from "../../components/Product";
 import ProductFull from "../../components/Product/ProductFull";
+
+//helpers
+import wishListApi from "../../helpers/api/items/wishList";
 
 //interfases
 import { Book } from "../../types/ResponsesTypes.types";
@@ -53,7 +56,14 @@ function ProductList({
   paginatioRange
 }: ProductListPtops): JSX.Element {
   const [productsDisplayType, setProductsDisplayType] = useState<string>("lines");
+  const [userWishList, setUserWishList] = useState<Array<number>>([]);
   const [sortColumn, setSortColumn] = useState("id");
+
+  useEffect(() => {
+    wishListApi.getUserWishListSimple()
+      .then(resp => setUserWishList(resp))
+      .catch(() => setUserWishList([]));
+  }, []);
 
   const productListClassNames = classNames({
     [styles["renoshop-products-list__grid-blocks"]]: productsDisplayType === "blocks",
@@ -95,8 +105,8 @@ function ProductList({
       <div className={productListClassNames}>
         {
           sortedPageItems.map((bookItem: Book, index) => (productsDisplayType === "lines"
-            ? <ProductFull key={index} {...bookItem}/>
-            : <Product key={index} {...bookItem}/>))
+            ? <ProductFull key={index} inWishList={userWishList.includes(bookItem.id)} {...bookItem}/>
+            : <Product key={index} inWishList={userWishList.includes(bookItem.id)} {...bookItem}/>))
         }
       </div>
       {

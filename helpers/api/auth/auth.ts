@@ -1,6 +1,9 @@
 import fetch from "../index";
 import Cookies from "universal-cookie";
 
+//helpers
+import errorBoundary from "../../errorBoundary";
+
 //interfases
 import { LoginData, RegisterData } from "./auth.types";
 
@@ -18,12 +21,7 @@ const auth = {
       cookies.set("accessToken", result.accessToken, { path: "/" });
       cookies.set("refreshToken", result.refreshToken, { path: "/" });
     } catch (e) {
-      if (e.response) {
-        throw e.response;
-      } else if (e.data) {
-        throw e.data;
-      }
-      throw new Error("Something goes wrong");
+      errorBoundary(e);
     }
   },
 
@@ -40,13 +38,7 @@ const auth = {
       cookies.set("accessToken", result.accessToken, { path: "/" });
       cookies.set("refreshToken", result.refreshToken, { path: "/" });
     } catch (e) {
-      if (e.response) {
-        throw e.response;
-      } else if (e.data) {
-        throw e.data;
-      }
-
-      throw new Error("Something goes wrong");
+      errorBoundary(e);
     }
   },
 
@@ -63,13 +55,7 @@ const auth = {
       cookies.set("accessToken", result.accessToken, { path: "/" });
       cookies.set("refreshToken", result.refreshToken, { path: "/" });
     } catch (e) {
-      if (e.response) {
-        throw e.response;
-      } else if (e.data) {
-        throw e.data;
-      }
-
-      throw new Error("Something goes wrong");
+      errorBoundary(e);
     }
   },
 
@@ -83,13 +69,7 @@ const auth = {
 
       return result;
     } catch (e) {
-      if (e.response) {
-        throw e.response;
-      } else if (e.data) {
-        throw e.data;
-      }
-
-      throw new Error("Something goes wrong");
+      errorBoundary(e);
     }
   },
 
@@ -106,13 +86,7 @@ const auth = {
       cookies.set("accessToken", result.accessToken, { path: "/" });
       cookies.set("refreshToken", result.refreshToken, { path: "/" });
     } catch (e) {
-      if (e.response) {
-        throw e.response;
-      } else if (e.data) {
-        throw e.data;
-      }
-
-      throw new Error("Something goes wrong");
+      errorBoundary(e);
     }
   },
 
@@ -129,17 +103,11 @@ const auth = {
       cookies.set("accessToken", result.accessToken, { path: "/" });
       cookies.set("refreshToken", result.refreshToken, { path: "/" });
     } catch (e) {
-      if (e.response) {
-        throw e.response;
-      } else if (e.data) {
-        throw e.data;
-      }
-
-      throw new Error("Something goes wrong");
+      errorBoundary(e);
     }
   },
 
-  async profile(): Promise<any> {
+  async profile(): Promise<Record<string, unknown>> {
     try {
       const result = await fetch({
         url: "/auth/profile",
@@ -148,13 +116,7 @@ const auth = {
 
       return result;
     } catch (e) {
-      if (e.response) {
-        throw e.response;
-      } else if (e.data) {
-        throw e.data;
-      }
-
-      throw new Error("Something goes wrong");
+      errorBoundary(e);
     }
   }
 };

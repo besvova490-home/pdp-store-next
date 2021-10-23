@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
 import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 import Head from "next/head";
 
 //layouts
@@ -14,6 +15,10 @@ import { Book, Category } from "../../types/ResponsesTypes.types";
 //helpers
 import { getProductsList, getProductsListByCategory } from "../../helpers/api/product";
 import { getCategoriesList } from "../../helpers/api/categories";
+
+//styles
+import "react-toastify/dist/ReactToastify.css";
+
 
 interface PageInterface {
   pageItemsList: Array<Book>;
@@ -42,6 +47,7 @@ export default function Home({ pageItemsList = [], categoriesList, category }: P
         paginationPage={paginationPage}
         onPaginationChange={setPaginationPage}
       />
+      <ToastContainer/>
     </LayoutWithSideBar>
   );
 }

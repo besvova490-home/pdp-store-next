@@ -12,7 +12,8 @@ import { Book } from "../../types/ResponsesTypes.types";
 import styles from "../../assets/scss/components/Product.module.scss";
 
 
-function Product({ id, title, amount, thumbnailLink, averageRating }: Book): JSX.Element {
+function Product(props: Book & { inWishList?: boolean }): JSX.Element {
+  const { id, title, amount, thumbnailLink, averageRating, inWishList } = props;
 
   //TODO remuve this (just testing)
   if (!id) return <div/>;
@@ -22,7 +23,7 @@ function Product({ id, title, amount, thumbnailLink, averageRating }: Book): JSX
     <div className={styles["product-cart"]}>
       <div className={styles["product-cart__image-container"]}>
         <ImagePlaceholder url={thumbnailLink} className={styles["product-cart__image"]}/>
-        <ProductActions/>
+        <ProductActions inWishList={inWishList}/>
       </div>
       <div className={styles["product-cart__description"]}>
         <Link href={`/product/${id}`}><a className={styles["product-cart__title"]}>{ title }</a></Link>
