@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-
 //layouts
 import BaseLayout from "../layouts/BaseLayout";
 import AuthFormLayout from "../layouts/AuthFormLayout";
@@ -16,7 +13,7 @@ function LoginPage(): JSX.Element {
 
   return (
     <BaseLayout>
-      <section className={`base-page-container ${styles["renoshop-auth-page"]}`}>
+      <section className={`base-page-container ${styles["renoshop-auth-page"]}`} data-testid="login-page">
         <AuthFormLayout formTitle="Log In Your Account">
           <LoginForm/>
         </AuthFormLayout>

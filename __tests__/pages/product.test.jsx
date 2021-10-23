@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import SingleProductPage from "../../pages/product/[id]";
 
-describe("Home", () => {
+describe("SingleProductPage", () => {
   it("renders a heading", () => {
     render(<SingleProductPage />);
 

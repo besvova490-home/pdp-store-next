@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import queryString from "query-string";
 import { Input, Button, GoogleButton, FacebookButton, Text } from "coax-ui-lib-0";
 import { toast, ToastContainer } from "react-toastify";
 import { useGoogleLogin, GoogleLoginResponse, useGoogleLogout } from "react-google-login";

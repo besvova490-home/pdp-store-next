@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import CategoryPage from "../../pages/category/[category]";
 
-describe("Home", () => {
+describe("CategoryPage", () => {
   it("renders a heading", () => {
     render(<CategoryPage />);
 
