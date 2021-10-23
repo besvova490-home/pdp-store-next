@@ -17,6 +17,11 @@
     "collectCoverage": true,
     "testResultsProcessor": "jest-sonar-reporter"
   },
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-reporter.xml",
+    "indent": 4
+  },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "axios": "^0.22.0",
