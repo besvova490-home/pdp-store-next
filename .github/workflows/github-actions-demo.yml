@@ -46,3 +46,5 @@ jobs:
         run: npm run test:ci
       - name: Run List 
         run: npm run lint
+      - name: Analize Analyze with SonarQube
+        run: npm run sonar
