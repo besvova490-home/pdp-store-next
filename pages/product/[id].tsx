@@ -31,7 +31,7 @@ function ProductTemplate(props: BookFullObj): JSX.Element {
 
   return (
     <BaseLayout>
-      <section className={styles["renoshop-single-product"]}>
+      <section className={styles["renoshop-single-product"]} data-testid="single-product-page">
         <p>breadcrumbs</p>
         <div className={styles["renoshop-single-product__wrapper"]}>
           <div className={`${styles["renoshop-single-product__block"]} ${styles["renoshop-single-product__main-info"]}`}>

@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Home from "../pages/index";
+import SingleProductPage from "../../pages/product/[id]";
 
 describe("Home", () => {
   it("renders a heading", () => {
-    render(<Home />);
+    render(<SingleProductPage />);
 
-    const heading = screen.getByText("Woocommerce");
+    const heading = screen.getByTestId("single-product-page");
     expect(heading).toBeInTheDocument();
   });
 });

@@ -2,11 +2,9 @@ import { useRouter } from "next/router";
 import { toast, ToastContainer } from "react-toastify";
 import { Input, Button, Text, GoogleButton, FacebookButton } from "coax-ui-lib-0";
 import { useGoogleLogin, GoogleLoginResponse, useGoogleLogout } from "react-google-login";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-
-//styles
-import "react-toastify/dist/ReactToastify.css";
 
 //elements
 import LinkCustom from "../../elements/LinkCustom";
@@ -20,6 +18,7 @@ import { RegisterData } from "../../helpers/api/auth/auth.types";
 
 //styles
 import styles from "../../assets/scss/pages/AuthPage.module.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 const validationShema = Yup.object().shape({
   avatar: Yup.mixed(),
@@ -55,21 +54,31 @@ function RegisterForm():JSX.Element {
 
   const { signIn } = useGoogleLogin({
     onSuccess: (resp: GoogleLoginResponse) => {
-      const promiseGoogle = auth.registerGoogle({ token: resp.tokenId })
+      auth.registerGoogle({ token: resp.tokenId })
         .then(() => {
           router.push("/profile?tab=user-information");
+          toast.success("You have bee succsefuly registered");
         })
-        .catch(() => signOut());
-
-      toast.promise(promiseGoogle, {
-        pending: "Register in process ...",
-        error: "",
-        success: "You have bee succsefuly registered",
-      });
+        .catch(e => {
+          signOut();
+          toast.error(e);
+        });
     },
     clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-    isSignedIn: true,
+    isSignedIn: false,
   });
+
+  const facebookRegister = ({ accessToken }) => {
+    auth.registerFacebook({ token: accessToken })
+      .then(() => {
+        router.push("/profile?tab=user-information");
+        toast.success("You have bee succsefuly registered");
+      })
+      .catch(e => {
+        console.log(e);
+        toast.error(e.msg ? e.msg : e);
+      });
+  };
 
 
   return (
@@ -124,7 +133,17 @@ function RegisterForm():JSX.Element {
               <Text type="secondary" size="s">Register with</Text>
               <div className={styles["renoshop-auth-form__btn-group"]}>
                 <GoogleButton label="Google" onClick={signIn}/>
-                <FacebookButton label="Facebook"/>
+                
+                <FacebookLogin
+                  appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
+                  callback={facebookRegister}
+                  render={({ onClick }) => (
+                    <FacebookButton
+                      label="Facebook"
+                      onClick={onClick}
+                    />
+                  )}
+                />
               </div>
             </div>
           </Form>

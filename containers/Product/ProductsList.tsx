@@ -74,7 +74,7 @@ function ProductList({
 
 
   return (
-    <section className={styles["renoshop-products-list"]}>
+    <section className={styles["renoshop-products-list"]} data-testid="category-page">
       <div className={styles["renoshop-products-list__top"]}>
         <div className={styles["renoshop-products-list__display-settings"]}>
           <Text type="secondary" size="s">Showing {paginatioRange.start + 1}-{paginatioRange.start + pageItemsList.length} of {totalItem} results</Text>
