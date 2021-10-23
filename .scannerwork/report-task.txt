@@ -2,5 +2,5 @@ projectKey=besvova490-home_pdp-store-next
 serverUrl=http://64.227.116.189:9000
 serverVersion=8.9.2.46101
 dashboardUrl=http://64.227.116.189:9000/dashboard?id=besvova490-home_pdp-store-next
-ceTaskId=AXyuYkWbaOEe0Kvs3FnB
-ceTaskUrl=http://64.227.116.189:9000/api/ce/task?id=AXyuYkWbaOEe0Kvs3FnB
+ceTaskId=AXyucDzFaOEe0Kvs3FnI
+ceTaskUrl=http://64.227.116.189:9000/api/ce/task?id=AXyucDzFaOEe0Kvs3FnI
