@@ -24,7 +24,6 @@
     "indent": 4
   },
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
     "axios": "^0.22.0",
     "coax-ui-lib-0": "^1.0.0",
     "country-state-city": "^3.0.1",
