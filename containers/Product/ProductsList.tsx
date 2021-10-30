@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconButton, Text, classNames, Pagination, Select } from "coax-ui-lib-0";
+import { toast } from "react-toastify";
 
 //components
 import Product from "../../components/Product";
@@ -65,6 +66,28 @@ function ProductList({
       .catch(() => setUserWishList([]));
   }, []);
 
+  const handleAddToWishList = bookId => {
+    wishListApi.addToMyWishList({ bookId: bookId })
+      .then(() => {
+        toast.success("Book added to your wish list");
+        wishListApi.getUserWishListSimple()
+          .then(resp => setUserWishList(resp))
+          .catch(() => setUserWishList([]));
+      })
+      .catch(e => toast.error(e.msg || "Something goes wrong"));
+  };
+
+  const handleDeleteFromWishList = bookId => {
+    wishListApi.deleteFromWishList(bookId)
+      .then(() => {
+        toast.success("Book remuved from your wish list");
+        wishListApi.getUserWishListSimple()
+          .then(resp => setUserWishList(resp))
+          .catch(() => setUserWishList([]));
+      })
+      .catch(e => toast.error(e.msg || "Something goes wrong"));
+  };
+
   const productListClassNames = classNames({
     [styles["renoshop-products-list__grid-blocks"]]: productsDisplayType === "blocks",
     [styles["renoshop-products-list__grid-lines"]]: productsDisplayType === "lines",
@@ -98,15 +121,35 @@ function ProductList({
           </div>
         </div>
         <div className={styles["renoshop-products-list__grid-actions"]}>
-          <IconButton icon={<CgMenuGridR/>} onClick={() => setProductsDisplayType("blocks")} type={productsDisplayType === "blocks" ? "primary" : "default"}/>
-          <IconButton icon={<GiHamburgerMenu/>} onClick={() => setProductsDisplayType("lines")} type={productsDisplayType === "lines" ? "primary" : "default"}/>
+          <IconButton
+            icon={<CgMenuGridR/>}
+            onClick={() => setProductsDisplayType("blocks")}
+            type={productsDisplayType === "blocks" ? "primary" : "default"}
+          />
+          <IconButton
+            icon={<GiHamburgerMenu/>}
+            onClick={() => setProductsDisplayType("lines")}
+            type={productsDisplayType === "lines" ? "primary" : "default"}
+          />
         </div>
       </div>
       <div className={productListClassNames}>
         {
           sortedPageItems.map((bookItem: Book, index) => (productsDisplayType === "lines"
-            ? <ProductFull key={index} inWishList={userWishList.includes(bookItem.id)} {...bookItem}/>
-            : <Product key={index} inWishList={userWishList.includes(bookItem.id)} {...bookItem}/>))
+            ? <ProductFull
+              key={index}
+              inWishList={userWishList.includes(bookItem.id)}
+              handleAddToWishList={handleAddToWishList}
+              handleDeleteFromWishList={handleDeleteFromWishList}
+              {...bookItem}
+            />
+            : <Product
+              key={index}
+              handleAddToWishList={handleAddToWishList}
+              handleDeleteFromWishList={handleDeleteFromWishList}
+              inWishList={userWishList.includes(bookItem.id)}
+              {...bookItem}
+            />))
         }
       </div>
       {

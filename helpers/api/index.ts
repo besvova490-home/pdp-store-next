@@ -5,7 +5,7 @@ import Cookies from "universal-cookie";
 let authTokenRequest = null;
 
 const client = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: "http://localhost:8080",
   headers: { "Content-Type": "application/json" }
 });
 
@@ -13,12 +13,14 @@ function requestNewToken() {
   const cookies = new Cookies();
   const refreshToken = cookies.get("refreshToken");
 
-  return axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/token/`, { refreshToken: refreshToken }).then((res: AxiosResponse<{ accessToken: string; refreshToken: string }>) => {
-    const { data } = res;
+  return axios.post(`http://localhost:8080/auth/token/`, { refreshToken: refreshToken })
+    .then((res: AxiosResponse<{ accessToken: string; refreshToken: string }>) => {
+      const { data } = res;
 
-    cookies.set("accessToken", data.accessToken, { path: "/" });
-    cookies.set("refreshToken", data.refreshToken, { path: "/" });
-  });
+      cookies.set("accessToken", data.accessToken, { path: "/" });
+      cookies.set("refreshToken", data.refreshToken, { path: "/" });
+    })
+    .catch(() => window.location.href = "/login");
 }
 
 function getAuthToken() {

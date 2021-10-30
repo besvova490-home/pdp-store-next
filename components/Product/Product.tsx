@@ -12,7 +12,14 @@ import { Book } from "../../types/ResponsesTypes.types";
 import styles from "../../assets/scss/components/Product.module.scss";
 
 
-function Product(props: Book & { inWishList?: boolean }): JSX.Element {
+interface ProductFullInterface extends Book {
+  inWishList?: boolean;
+  handleAddToWishList?: (bookId: string | number) => void;
+  handleDeleteFromWishList?: (bookId: string | number) => void;
+}
+
+
+function Product(props: ProductFullInterface): JSX.Element {
   const { id, title, amount, thumbnailLink, averageRating, inWishList } = props;
 
   //TODO remuve this (just testing)
@@ -23,7 +30,14 @@ function Product(props: Book & { inWishList?: boolean }): JSX.Element {
     <div className={styles["product-cart"]}>
       <div className={styles["product-cart__image-container"]}>
         <ImagePlaceholder url={thumbnailLink} className={styles["product-cart__image"]}/>
-        <ProductActions inWishList={inWishList}/>
+        <ProductActions
+          inWishList={inWishList}
+          onWishListClick={() => {
+            inWishList
+              ? props.handleDeleteFromWishList(props.id)
+              : props.handleAddToWishList(props.id);
+          }}
+        />
       </div>
       <div className={styles["product-cart__description"]}>
         <Link href={`/product/${id}`}><a className={styles["product-cart__title"]}>{ title }</a></Link>

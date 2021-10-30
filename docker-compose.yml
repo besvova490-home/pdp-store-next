@@ -1,8 +1,8 @@
 version: "3"
 services:
   app:
-    image: pdp-store-next
-    container_name: pdp-store-next
+    image: my-next-js-app
+    container_name: my-next-js-app
     restart: always
     ports:
       - 3000:3000

@@ -76,7 +76,7 @@ export default function Wishlist(): JSX.Element {
               render={row => (
                 <div className={styles["wishlist-table__actions"]}>
                   <AddToCardButton onClick={() => null} size="middle"/>
-                  <AddToWithButton onClick={() => handleDeleteFromWishList(`${row.id}`)} size="middle"/>
+                  <AddToWithButton onClick={() => handleDeleteFromWishList(`${row.id}`)} size="middle" inWishList/>
                 </div>
               )}
             />
