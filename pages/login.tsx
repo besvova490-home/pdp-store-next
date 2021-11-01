@@ -10,7 +10,6 @@ import styles from "../assets/scss/pages/AuthPage.module.scss";
 
 
 function LoginPage(): JSX.Element {
-
   return (
     <BaseLayout>
       <section className={`base-page-container ${styles["renoshop-auth-page"]}`} data-testid="login-page">

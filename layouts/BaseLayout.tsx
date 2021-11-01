@@ -8,7 +8,6 @@ import { BaseLayoutInterface } from "../types/Layout.types";
 
 function BaseLayout({ children }: BaseLayoutInterface): JSX.Element {
 
-
   return (
     <div className="page-content">
       <Header/>

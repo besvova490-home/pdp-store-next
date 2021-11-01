@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Input, Button, GoogleButton, FacebookButton, Text } from "coax-ui-lib-0";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { useGoogleLogin, GoogleLoginResponse, useGoogleLogout } from "react-google-login";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import { Formik, Form } from "formik";
@@ -39,7 +39,6 @@ function LoginForm():JSX.Element {
     auth.login(data)
       .then(() => router.push("/profile?tab=user-information"))
       .catch(e => {
-        console.log(e);
         setResponseErrors(e);
       })
       .finally(() => setLoading(false));
@@ -48,6 +47,7 @@ function LoginForm():JSX.Element {
   const { signOut } = useGoogleLogout({
     clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
   });
+
 
   const { signIn } = useGoogleLogin({
     onSuccess: (resp: GoogleLoginResponse) => {
@@ -74,53 +74,50 @@ function LoginForm():JSX.Element {
 
 
   return (
-    <>
-      <Formik
-        initialValues={initialValies}
-        validationSchema={validationShema}
-        validateOnBlur={false}
-        validateOnChange={false}
-        onSubmit={data => handleSubmit(data)}
-      >
-        {({ errors, setFieldValue }) => (
-          <Form className={styles["renoshop-auth-form"]}>
-            <Input
-              placeholder="Email"
-              fullWidth
-              error={errors.email || responseErrors.email}
-              onChange={e => setFieldValue("email", e.target.value)}
-            />
-            <Input
-              placeholder="Password"
-              type="password"
-              fullWidth
-              error={errors.password || responseErrors.password}
-              onChange={e => setFieldValue("password", e.target.value)}
-            />
-            <LinkCustom href="#" label="Forgot your password?"/>
-            <Button label="Login" size="large" loading={loading}/>
-            <div className={styles["renoshop-auth-form__socials-container"]}>
-              <Text type="secondary" size="s">Login with</Text>
-              <div className={styles["renoshop-auth-form__btn-group"]}>
-                <GoogleButton label="Google" onClick={signIn}/>
-                
-                <FacebookLogin
-                  appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
-                  callback={facebookLogin}
-                  render={({ onClick }) => (
-                    <FacebookButton
-                      label="Facebook"
-                      onClick={onClick}
-                    />
-                  )}
-                />
-              </div>
+    <Formik
+      initialValues={initialValies}
+      validationSchema={validationShema}
+      validateOnBlur={false}
+      validateOnChange={false}
+      onSubmit={data => handleSubmit(data)}
+    >
+      {({ errors, setFieldValue }) => (
+        <Form className={styles["renoshop-auth-form"]}>
+          <Input
+            placeholder="Email"
+            fullWidth
+            error={errors.email || responseErrors.email}
+            onChange={e => setFieldValue("email", e.target.value)}
+          />
+          <Input
+            placeholder="Password"
+            type="password"
+            fullWidth
+            error={errors.password || responseErrors.password}
+            onChange={e => setFieldValue("password", e.target.value)}
+          />
+          <LinkCustom href="#" label="Forgot your password?"/>
+          <Button label="Login" size="large" loading={loading}/>
+          <div className={styles["renoshop-auth-form__socials-container"]}>
+            <Text type="secondary" size="s">Login with</Text>
+            <div className={styles["renoshop-auth-form__btn-group"]}>
+              <GoogleButton label="Google" onClick={signIn}/>
+            
+              <FacebookLogin
+                appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
+                callback={facebookLogin}
+                render={({ onClick }) => (
+                  <FacebookButton
+                    label="Facebook"
+                    onClick={onClick}
+                  />
+                )}
+              />
             </div>
-          </Form>
-        )}
-      </Formik>
-      <ToastContainer/>
-    </>
+          </div>
+        </Form>
+      )}
+    </Formik>
   );
 }
 

@@ -9,7 +9,6 @@ import { LayoutWithSideBarProps } from "../types/Layout.types";
 
 function LayoutWithSideBar({ children, categoriesList }: LayoutWithSideBarProps): JSX.Element {
 
-
   return (
     <div className="page-content">
       <Header/>

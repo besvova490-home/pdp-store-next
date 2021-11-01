@@ -7,7 +7,7 @@ import { classNames } from "coax-ui-lib-0";
 import styles from "../../assets/scss/components/Carousel.module.scss";
 
 
-function Carousel({ title }: any): JSX.Element {
+function Carousel({ title }: { title: string }): JSX.Element {
   const [disabledDirection, setDisabledDirection] = useState<string>("");
   const carouselRef = useRef<HTMLDivElement>(null);
 

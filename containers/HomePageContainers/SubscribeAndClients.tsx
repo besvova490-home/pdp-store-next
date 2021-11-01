@@ -1,14 +1,28 @@
 import { Title, Text, Input, Button } from "coax-ui-lib-0";
+import { useFormik } from "formik";
+import { toast } from "react-toastify";
 
 //components
 import ImagePlaceholder from "../../components/ImagePlaceholder";
+
+//helpers
+import recaptchaValidation from "../../helpers/recaptchaValidation";
 
 //styles
 import styles from "../../assets/scss/containers/SubscribeAndClients.module.scss";
 
 
 function SubscribeAndClients(): JSX.Element {
-
+  const { handleSubmit, setFieldValue } = useFormik({
+    initialValues: {
+      email: "",
+    },
+    onSubmit: () => {
+      recaptchaValidation()
+        .then(() => toast.success("You have been sucseccfyly subscribet for updates"))
+        .catch(() => toast.error("Looks like you are a bot"));
+    },
+  });
 
   return (
     <section className={styles["subscribe-clients"]}>
@@ -20,11 +34,17 @@ function SubscribeAndClients(): JSX.Element {
           <Title level={6} className="bold-text white-color">Get Out Special Discount</Title>
           <Text size="s" fontWeight="semibold" className={`${styles.subscribe__description} white-color`}>Donec eu tristique felis. Duis augue mi, auctor ut purus
             et, dignissim aliquet quam.
-            register your email for news and special offers</Text>
-          <div className={styles.subscribe__form}>
-            <Input placeholder="E-mail address ..."/>
-            <Button label="GET COUPON NOW"/>
-          </div>
+            register your email for news and special offers
+          </Text>
+          <form className={styles.subscribe__form} onSubmit={handleSubmit}>
+            <Input
+              placeholder="E-mail address ..."
+              className={styles.subscribe__input}
+              name="email"
+              onChange={e => setFieldValue("email", e.target.value)}
+            />
+            <Button label="GET COUPON NOW" htmlType="submit"/>
+          </form>
         </div>
       </div>
       <div className={styles.clients}>

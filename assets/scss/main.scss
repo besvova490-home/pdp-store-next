@@ -29,3 +29,17 @@
   max-height: unset !important;
   object-fit: contain;
 }
+
+.intercom-button {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+
+  height: 100px;
+  width: 100px;
+  
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}

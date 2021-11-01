@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Rating } from "coax-ui-lib-0";
+import { Rating, Table, Column } from "coax-ui-lib-0";
 
 //layouts
 import BaseLayout from "../layouts/BaseLayout";
@@ -8,7 +8,6 @@ import BaseLayout from "../layouts/BaseLayout";
 import ImagePlaceholder from "../components/ImagePlaceholder";
 import AddToCardButton from "../elements/Buttons/AddToCardButton";
 import AddToWithButton from "../elements/Buttons/AddToWithButton";
-import { Table, Column } from "../components/Table";
 
 //helpers
 import wishListApi from "../helpers/api/items/wishList";

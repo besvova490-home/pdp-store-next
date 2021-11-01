@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { Input, Button, Text, GoogleButton, FacebookButton } from "coax-ui-lib-0";
 import { useGoogleLogin, GoogleLoginResponse, useGoogleLogout } from "react-google-login";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
@@ -75,82 +75,78 @@ function RegisterForm():JSX.Element {
         toast.success("You have bee succsefuly registered");
       })
       .catch(e => {
-        console.log(e);
         toast.error(e.msg ? e.msg : e);
       });
   };
 
 
   return (
-    <>
-      <Formik
-        initialValues={initialValies}
-        validationSchema={validationShema}
-        onSubmit={data => handleSubmit(data)}
-        validateOnBlur={false}
-        validateOnChange={false}
-      >
-        {({ errors, setFieldValue, values }) => (
-          <Form className={styles["renoshop-auth-form"]}>
-            <div className={styles["renoshop-auth-form__row-center"]}>
-              <Upload previewImage={values.avatar} onUpload={image => setFieldValue("avatar", image.url)}/>
+    <Formik
+      initialValues={initialValies}
+      validationSchema={validationShema}
+      onSubmit={data => handleSubmit(data)}
+      validateOnBlur={false}
+      validateOnChange={false}
+    >
+      {({ errors, setFieldValue, values }) => (
+        <Form className={styles["renoshop-auth-form"]}>
+          <div className={styles["renoshop-auth-form__row-center"]}>
+            <Upload previewImage={values.avatar} onUpload={image => setFieldValue("avatar", image.url)}/>
+          </div>
+          <Input
+            placeholder="First Name"
+            fullWidth
+            error={errors.firstName}
+            onChange={e => setFieldValue("firstName", e.target.value)}
+          />
+          <Input
+            placeholder="Last Name"
+            fullWidth
+            error={errors.lastName}
+            onChange={e => setFieldValue("lastName", e.target.value)}
+          />
+          <Input
+            placeholder="Email"
+            fullWidth
+            error={errors.email}
+            onChange={e => setFieldValue("email", e.target.value)}
+          />
+          <Input
+            placeholder="Password"
+            fullWidth
+            type="password"
+            error={errors.password}
+            onChange={e => setFieldValue("password", e.target.value)}
+          />
+          <Input
+            placeholder="Password Confirm"
+            fullWidth
+            type="password"
+            error={errors.confirmPassword}
+            onChange={e => setFieldValue("confirmPassword", e.target.value)}
+          />
+          <LinkCustom href="/login" label="Already have an account? Sign in"/>
+          <Button label="Register" size="large" htmlType="submit"/>
+          <div className={styles["renoshop-auth-form__socials-container"]}>
+            <Text type="secondary" size="s">Register with</Text>
+            <div className={styles["renoshop-auth-form__btn-group"]}>
+              <GoogleButton label="Google" onClick={signIn}/>
+            
+              <FacebookLogin
+                appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
+                callback={facebookRegister}
+                render={({ onClick }) => (
+                  <FacebookButton
+                    label="Facebook"
+                    onClick={onClick}
+                  />
+                )}
+              />
             </div>
-            <Input
-              placeholder="First Name"
-              fullWidth
-              error={errors.firstName}
-              onChange={e => setFieldValue("firstName", e.target.value)}
-            />
-            <Input
-              placeholder="Last Name"
-              fullWidth
-              error={errors.lastName}
-              onChange={e => setFieldValue("lastName", e.target.value)}
-            />
-            <Input
-              placeholder="Email"
-              fullWidth
-              error={errors.email}
-              onChange={e => setFieldValue("email", e.target.value)}
-            />
-            <Input
-              placeholder="Password"
-              fullWidth
-              type="password"
-              error={errors.password}
-              onChange={e => setFieldValue("password", e.target.value)}
-            />
-            <Input
-              placeholder="Password Confirm"
-              fullWidth
-              type="password"
-              error={errors.confirmPassword}
-              onChange={e => setFieldValue("confirmPassword", e.target.value)}
-            />
-            <LinkCustom href="/login" label="Already have an account? Sign in"/>
-            <Button label="Register" size="large" htmlType="submit"/>
-            <div className={styles["renoshop-auth-form__socials-container"]}>
-              <Text type="secondary" size="s">Register with</Text>
-              <div className={styles["renoshop-auth-form__btn-group"]}>
-                <GoogleButton label="Google" onClick={signIn}/>
-                
-                <FacebookLogin
-                  appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
-                  callback={facebookRegister}
-                  render={({ onClick }) => (
-                    <FacebookButton
-                      label="Facebook"
-                      onClick={onClick}
-                    />
-                  )}
-                />
-              </div>
-            </div>
-          </Form>
-        )}
-      </Formik>
-      <ToastContainer/>
-    </>
+          </div>
+        </Form>
+      )}
+    </Formik>
   );
 }
 

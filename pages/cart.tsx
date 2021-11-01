@@ -1,4 +1,4 @@
-import { InputNumber, IconButton, Button, Input } from "coax-ui-lib-0";
+import { InputNumber, IconButton, Button, Input, Table, Column } from "coax-ui-lib-0";
 import { TiDeleteOutline } from "react-icons/ti";
 
 //layouts
@@ -6,8 +6,6 @@ import BaseLayout from "../layouts/BaseLayout";
 
 //components
 import ImagePlaceholder from "../components/ImagePlaceholder";
-import Table from "../components/Table/Table";
-import Column from "../components/Table/Column";
 
 //styles
 import styles from "../assets/scss/pages/WishlistPage.module.scss";

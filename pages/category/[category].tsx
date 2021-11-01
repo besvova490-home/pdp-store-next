@@ -1,6 +1,5 @@
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
 import { useState, useEffect } from "react";
-import { ToastContainer } from "react-toastify";
 import Head from "next/head";
 
 //layouts
@@ -47,7 +46,6 @@ export default function Home({ pageItemsList = [], categoriesList, category }: P
         paginationPage={paginationPage}
         onPaginationChange={setPaginationPage}
       />
-      <ToastContainer/>
     </LayoutWithSideBar>
   );
 }
