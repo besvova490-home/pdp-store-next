@@ -59,6 +59,23 @@ const auth = {
     }
   },
 
+  async loginGitHub(data: { code: string }): Promise<void> {
+    const cookies = new Cookies();
+
+    try {
+      const result = await fetch({
+        url: "auth/login/git-hub",
+        method: "POST",
+        data
+      });
+
+      cookies.set("accessToken", result.accessToken, { path: "/" });
+      cookies.set("refreshToken", result.refreshToken, { path: "/" });
+    } catch (e) {
+      errorBoundary(e);
+    }
+  },
+
   async register(data: RegisterData): Promise<void> {
     try {
       const result = await fetch({

@@ -1,5 +1,3 @@
-import { ToastContainer } from "react-toastify";
-
 //assets
 import {
   FaPhoneAlt,
@@ -93,7 +91,6 @@ function Footer(): JSX.Element {
           <FaCcVisa className="payment__card"/>
         </div>
       </div>
-      <ToastContainer/>
     </footer>);
 }
 

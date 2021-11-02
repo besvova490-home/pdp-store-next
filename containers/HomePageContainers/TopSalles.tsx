@@ -3,11 +3,14 @@ import { Title, Text } from "coax-ui-lib-0";
 //components
 import Product from "../../components/Product";
 
+//interfaces
+import { Book } from "../../types/ResponsesTypes.types";
+
 //styles
 import styles from "../../assets/scss/containers/TopSalles.module.scss";
 
 
-function TopSalles(): JSX.Element {
+function TopSalles({ topItems }: { topItems: Array<Book> }): JSX.Element {
 
 
   return (
@@ -23,9 +26,11 @@ function TopSalles(): JSX.Element {
           </Text>
         </div>
       </div>
-      <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-      <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-      <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+      {
+        topItems.map(book => (
+          <Product {...book}/>
+        ))
+      }
     </section>
   );
 }

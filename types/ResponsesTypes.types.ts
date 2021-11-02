@@ -7,7 +7,7 @@ export interface Book {
   printType?: string;
   thumbnailLink?: string;
   previewLink?: string;
-  amount: number;
+  amount: number | string;
   discount?: number;
   averageRating?: number;
   pageCount?: number;

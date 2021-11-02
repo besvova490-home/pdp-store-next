@@ -17,7 +17,9 @@ function SubscribeAndClients(): JSX.Element {
     initialValues: {
       email: "",
     },
-    onSubmit: () => {
+    onSubmit: ({ email }) => {
+      if (!email) return;
+
       recaptchaValidation()
         .then(() => toast.success("You have been sucseccfyly subscribet for updates"))
         .catch(() => toast.error("Looks like you are a bot"));

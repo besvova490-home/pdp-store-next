@@ -1,3 +1,5 @@
+import { GetStaticProps } from "next";
+
 //layouts
 import BaseLayout from "../layouts/BaseLayout";
 
@@ -8,18 +10,34 @@ import MainInfo from "../containers/HomePageContainers/MainInfo";
 import DiscountContainer from "../containers/HomePageContainers/DiscountContainer";
 import FeaturedProducts from "../containers/HomePageContainers/FeaturedProducts";
 import SubscribeAndClients from "../containers/HomePageContainers/SubscribeAndClients";
-//todo refactore
+
+//interfaces
+import { Book } from "../types/ResponsesTypes.types";
+
+//helpers
+import { getProducts } from "../helpers/api/product";
 
 
-export default function Home(): JSX.Element {
+export default function Home({ books }: { books: Array<Book> }): JSX.Element {
   return (
     <BaseLayout>
       <BestWoocommerce/>
-      <TopSalles/>
+      <TopSalles topItems={books.slice(0, 3)}/>
       <MainInfo/>
       <DiscountContainer/>
-      <FeaturedProducts/>
+      <FeaturedProducts booksList={books.slice(3, 15)}/>
       <SubscribeAndClients/>
     </BaseLayout>
   );
 }
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { books } = await getProducts({ sortBy: "averageRating" });
+
+  return {
+    props: {
+      books
+    },
+  };
+};

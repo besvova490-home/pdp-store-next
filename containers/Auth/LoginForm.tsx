@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { Input, Button, GoogleButton, FacebookButton, Text } from "coax-ui-lib-0";
+import { Input, Button, GoogleButton, FacebookButton, Text, GitHubButton } from "coax-ui-lib-0";
 import { toast } from "react-toastify";
 import { useGoogleLogin, GoogleLoginResponse, useGoogleLogout } from "react-google-login";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
@@ -16,7 +16,6 @@ import auth from "../../helpers/api/auth/auth";
 
 //styles
 import styles from "../../assets/scss/pages/AuthPage.module.scss";
-import "react-toastify/dist/ReactToastify.css";
 
 
 const validationShema = Yup.object().shape({
@@ -102,16 +101,20 @@ function LoginForm():JSX.Element {
             <Text type="secondary" size="s">Login with</Text>
             <div className={styles["renoshop-auth-form__btn-group"]}>
               <GoogleButton label="Google" onClick={signIn}/>
-            
               <FacebookLogin
+                autoLoad={false}
                 appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
                 callback={facebookLogin}
                 render={({ onClick }) => (
                   <FacebookButton
                     label="Facebook"
-                    onClick={onClick}
+                    onClick={() => onClick()}
                   />
                 )}
+              />
+              <GitHubButton
+                href={`https://github.com/login/oauth/authorize?scope=user&client_id=${process.env.NEXT_PUBLIC_GIT_HUB_CLIENT}&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/authCallback`}
+                label="Git Hub"
               />
             </div>
           </div>

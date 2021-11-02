@@ -12,7 +12,6 @@ function LayoutWithSideBar({ children, categoriesList }: LayoutWithSideBarProps)
   return (
     <div className="page-content">
       <Header/>
-      <p>pagination</p>
       <div className="layout-with-side-bar__content">
         <SideBar categoriesList={categoriesList}/>
         <main>

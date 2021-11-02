@@ -38,6 +38,7 @@
     "react-google-login": "^5.2.2",
     "react-google-recaptcha-v3": "^1.9.7",
     "react-icons": "^4.2.0",
+    "react-share": "^4.4.0",
     "react-toastify": "^8.0.3",
     "react-use-intercom": "^1.4.0",
     "sonarqube-scanner": "^2.8.1",

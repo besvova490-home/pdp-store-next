@@ -3,11 +3,14 @@ import { Text, Title } from "coax-ui-lib-0";
 //components
 import Product from "../../components/Product";
 
+//interfaces
+import { Book } from "../../types/ResponsesTypes.types";
+
 //styles
 import styles from "../../assets/scss/containers/FeaturedProducts.module.scss";
 
 
-export default function FeaturedProducts(): JSX.Element {
+export default function FeaturedProducts({ booksList }: { booksList: Array<Book> }): JSX.Element {
   return (
     <section className={styles["featured-products"]}>
       <div className={styles["featured-products__description"]}>
@@ -15,15 +18,11 @@ export default function FeaturedProducts(): JSX.Element {
         <Text type="primary" size="s" italic>Newest trends from top brands</Text>
       </div>
       <div className={`${styles["featured-products__products-grid"]}`}>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
-        <Product title="Lorem" shortDescription="Lorem" id={0} amount={1}/>
+        {
+          booksList.map(book => (
+            <Product {...book} amount={"-"}/>
+          ))
+        }
       </div>
     </section>
   );

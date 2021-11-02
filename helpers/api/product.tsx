@@ -1,7 +1,16 @@
+//helpers
 import client from "../api";
+import queryBuilder from "../queryBuilder";
+import errorBoundary from "../errorBoundary";
 
 //interfases
 import { Book } from "../../types/ResponsesTypes.types";
+
+interface QueryInterface {
+  startIndex?: string | number,
+  maxResults?: string | number,
+  sortBy?: string
+}
 
 export const getProductsList = async (): Promise<{books: Array<Book>, counter: number}> => {
   try {
@@ -9,7 +18,7 @@ export const getProductsList = async (): Promise<{books: Array<Book>, counter: n
 
     return data;
   } catch (e) {
-    console.log(e);
+    errorBoundary(e);
   }
 };
 
@@ -19,7 +28,7 @@ export const getProductsById = async (bookId: number | string): Promise<Book> =>
 
     return data;
   } catch (e) {
-    console.log(e);
+    errorBoundary(e);
   }
 };
 
@@ -43,7 +52,7 @@ export const getProductsListByCategory = async (
       counter: totalBooks,
     };
   } catch (e) {
-    console.log(e);
+    errorBoundary(e);
   }
 };
 
@@ -65,6 +74,19 @@ export const getAllProducts = async (): Promise<{books: Array<Book>, counter: nu
       counter: totalBooks,
     };
   } catch (e) {
-    console.log(e);
+    errorBoundary(e);
+  }
+};
+
+export const getProducts = async (args: QueryInterface): Promise<{books: Array<Book>}> => {
+  const queryString = queryBuilder(args as Record<string, unknown>);
+
+  try {
+    const { data } = await client.get<{ books: Array<Book> }>(`/books?${queryString}`);
+
+
+    return { books: data.books };
+  } catch (e) {
+    errorBoundary(e);
   }
 };
