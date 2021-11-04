@@ -1,7 +1,20 @@
-version: '3' #This denotes that we are using version 3 of Docker Compose
-services: #This section defines all the different containers we will create.
-  blog_deepak: #This is the name of our Nextjs application.
-    build: #This specifies the location of our Dockerfile
-      context: . #This specifies the location of our Dockerfile
-    ports: #This is used to map the container’s ports to the host machine.
+version: '3'
+services:
+  store-fe:
+    image: pdp-store-fe:latest
+    stdin_open: true
+    ports:
       - "3000:3000"
+    networks:
+      - app-pdp
+    depends_on:
+      - store-be
+  store-be:
+    image: app-be-node
+    ports:
+      - "8080:8080"
+    networks:
+      - app-pdp
+networks:
+  app-pdp:
+    driver: bridge

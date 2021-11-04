@@ -127,9 +127,11 @@ const auth = {
   async profile(): Promise<Record<string, unknown>> {
     try {
       const result = await fetch({
-        url: "/auth/profile",
+        url: "auth/profile",
         method: "GET",
       });
+
+      console.log("result", result);
 
       return result;
     } catch (e) {

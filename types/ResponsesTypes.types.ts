@@ -24,3 +24,10 @@ export interface Category {
   title: string;
   booksCounter: number | string;
 }
+
+
+export interface Author {
+  id: number;
+  name: string;
+  description: number | string;
+}

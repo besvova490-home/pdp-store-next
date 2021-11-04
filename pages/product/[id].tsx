@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { IoLogoTwitter } from "react-icons/io";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -23,7 +23,7 @@ import CompareButton from "../../elements/Buttons/CompareButton";
 import { BookFullObj } from "../../types/ResponsesTypes.types";
 
 //helpers
-import { getAllProducts, getProductsById } from "../../helpers/api/product";
+import { getProductsById } from "../../helpers/api/product";
 
 //styles
 import styles from "../../assets/scss/containers/ProductPage.module.scss";
@@ -136,18 +136,10 @@ function ProductTemplate(props: BookFullObj): JSX.Element {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const { books } = await getAllProducts();
-
-  return {
-    fallback: true,
-    paths: books.map(({ id }) => ({ params: { id: `${id}` } }))
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
-  const book = await getProductsById(`${params.id}`);
-
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+  const book = await getProductsById(`${context.params.id}`);
+  const { req, res } = context;
+  console.log(req.cookies);
 
   return {
     notFound: !book.id,

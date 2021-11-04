@@ -29,3 +29,28 @@
     grid-gap: 20px;
   }
 }
+
+.renoshop-profile-my-books {
+  &__image-column {
+    width: 70px;
+    height: auto;
+  }
+
+  &__table-cell-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__btn-group {
+    display: grid;
+    grid-template-columns: 32px 32px;
+    grid-gap: 20px;
+    justify-content: center;
+  }
+
+  &__btn-danger {
+    color: $danger-4 !important;
+    border-color: $danger-4 !important;
+  }
+}

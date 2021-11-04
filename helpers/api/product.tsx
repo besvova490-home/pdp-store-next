@@ -1,5 +1,5 @@
 //helpers
-import client from "../api";
+import fetch from "./index";
 import queryBuilder from "../queryBuilder";
 import errorBoundary from "../errorBoundary";
 
@@ -14,7 +14,10 @@ interface QueryInterface {
 
 export const getProductsList = async (): Promise<{books: Array<Book>, counter: number}> => {
   try {
-    const { data } = await client.get("/books");
+    const data = await fetch({
+      url: "/books",
+      method: "GET",
+    });
 
     return data;
   } catch (e) {
@@ -24,7 +27,10 @@ export const getProductsList = async (): Promise<{books: Array<Book>, counter: n
 
 export const getProductsById = async (bookId: number | string): Promise<Book> => {
   try {
-    const { data } = await client.get(`/books/${bookId}`);
+    const data = await fetch({
+      url: `/books/${bookId}`,
+      method: "GET",
+    });
 
     return data;
   } catch (e) {
@@ -41,7 +47,10 @@ export const getProductsListByCategory = async (
     const books = [];
 
     do {
-      const { data } = await client.get<{ books: Array<Book>, counter: number }>(`/books/get-by-category/${categoryTitle}`);
+      const data = await fetch({
+        url: `/books/get-by-category/${categoryTitle}`,
+        method: "GET",
+      });
       totalBooks = data.counter;
       booksCounter += data.books.length;
       books.push(...data.books);
@@ -63,7 +72,10 @@ export const getAllProducts = async (): Promise<{books: Array<Book>, counter: nu
     const books = [];
 
     do {
-      const { data } = await client.get<{ books: Array<Book>, counter: number }>("/books");
+      const data = await fetch({
+        url: "/books",
+        method: "GET",
+      });
       totalBooks = data.counter;
       booksCounter += data.books.length;
       books.push(...data.books);
@@ -82,10 +94,12 @@ export const getProducts = async (args: QueryInterface): Promise<{books: Array<B
   const queryString = queryBuilder(args as Record<string, unknown>);
 
   try {
-    const { data } = await client.get<{ books: Array<Book> }>(`/books?${queryString}`);
+    const { books } = await fetch({
+      url: `/books?${queryString}`,
+      method: "GET",
+    });
 
-
-    return { books: data.books };
+    return { books };
   } catch (e) {
     errorBoundary(e);
   }

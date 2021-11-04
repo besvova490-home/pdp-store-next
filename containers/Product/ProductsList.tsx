@@ -10,6 +10,7 @@ import ProductFull from "../../components/Product/ProductFull";
 
 //helpers
 import wishListApi from "../../helpers/api/items/wishList";
+import byTextAscending from "../../helpers/sortObj";
 
 //interfases
 import { Book } from "../../types/ResponsesTypes.types";
@@ -40,7 +41,7 @@ const sortingFunc = (columnName: string, data: Array<Book>): Array<Book> => {
     case "pageCount":
     case "averageRating":
     case "amount":
-      return data.sort((a, b) => a[columnName] - b[columnName]);
+      return data.sort(byTextAscending((item: Book) => item[columnName]));
     case "title":
       return data.sort((a, b) => a.title.localeCompare(b.title));
     default:

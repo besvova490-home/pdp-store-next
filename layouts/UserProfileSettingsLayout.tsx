@@ -1,4 +1,4 @@
-import { Button } from "coax-ui-lib-0";
+import React from "react";
 
 //interface
 import { BaseLayoutInterface } from "../types/Layout.types";
@@ -7,17 +7,23 @@ import { BaseLayoutInterface } from "../types/Layout.types";
 import styles from "../assets/scss/pages/ProfilePage.module.scss";
 
 
-function UserProfileSettingsLayout({ children }: BaseLayoutInterface): JSX.Element {
+function UserProfileSettingsLayout({
+  children,
+  tabButton,
+  tabTitle
+}: BaseLayoutInterface & { tabButton: React.ReactNode, tabTitle?: string }): JSX.Element {
 
 
   return (
     <section className={styles["renoshop-profile__wrapper"]}>
       <div className={styles["renoshop-profile__title"]}>
-      Account information
+        { tabTitle }
       </div>
       <div className={styles["renoshop-profile__form"]}>
         { children }
-        <Button size="large" label="Save"/>
+        <div>
+          { tabButton }
+        </div>
       </div>
     </section>
   );

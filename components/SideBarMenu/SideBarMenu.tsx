@@ -48,6 +48,13 @@ function SideBarMenu():JSX.Element {
             </Link>
           </li>
           <li>
+            <Link href="/profile?tab=my-books">
+              <a className={styles["renoshop-profile-side-bar__menu-link"]}>
+                <div className={styles["renoshop-profile-side-bar__menu-item"]}>My Books</div>
+              </a>
+            </Link>
+          </li>
+          <li>
             <Link href="/profile?tab=invoices">
               <a className={styles["renoshop-profile-side-bar__menu-link"]}>
                 <div className={styles["renoshop-profile-side-bar__menu-item"]}>Order History</div>

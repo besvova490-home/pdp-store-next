@@ -5,6 +5,7 @@ ADD package-lock.json /out/pdp-app-fe
 RUN npm install
 ADD . .
 ENV NODE_OPTIONS="--max-old-space-size=1536"
+ENV NODE_OPTIONS=$NEXT_PUBLIC_API_URL
 RUN npm run build
 CMD npm start
 EXPOSE 3000
