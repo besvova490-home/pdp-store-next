@@ -18,7 +18,7 @@ import { Book } from "../types/ResponsesTypes.types";
 import { getProducts } from "../helpers/api/product";
 
 
-export default function Home({ books }: { books: Array<Book> }): JSX.Element {
+export default function Home({ books = [] }: { books: Array<Book> }): JSX.Element {
   return (
     <BaseLayout>
       <BestWoocommerce/>
