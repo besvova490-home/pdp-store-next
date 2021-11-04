@@ -137,10 +137,11 @@ function ProductTemplate(props: BookFullObj): JSX.Element {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-  const book = await getProductsById(`${context.params.id}`);
-  const { req, res } = context;
-  console.log(req.cookies);
+  const { req } = context;
+  const { accessToken } = req.cookies;
 
+  const book = await getProductsById(`${context.params.id}`, accessToken);
+  
   return {
     notFound: !book.id,
     props: { ...book },

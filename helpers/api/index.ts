@@ -13,7 +13,7 @@ function requestNewToken() {
   const cookies = new Cookies();
   const refreshToken = cookies.get("refreshToken");
 
-  return axios.post(`${process.env.NEXT_PUBLIC_API_UR}/auth/token/`, { refreshToken: refreshToken })
+  return axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/token/`, { refreshToken: refreshToken })
     .then((res: AxiosResponse<{ accessToken: string; refreshToken: string }>) => {
       const { data } = res;
 
@@ -45,7 +45,7 @@ client.interceptors.response.use(r => r, error => {
     if (originalRequest.url === "/auth/") return Promise.reject(error.response ? error.response : error);
   }
 
-  if (error.response.status === 401 && !originalRequest.__isRetryRequest) {
+  if (error.response.status === 403 && !originalRequest.__isRetryRequest) {
     originalRequest.__isRetryRequest = true;
 
     return getAuthToken().then(() => {
@@ -62,7 +62,7 @@ client.interceptors.response.use(r => r, error => {
 });
 
 
-const request = function(options) {
+const request = function(options, token = "") {
   const cookies = new Cookies();
   const accessToken = cookies.get("accessToken");
 
@@ -73,7 +73,7 @@ const request = function(options) {
     return Promise.reject(error);
   };
 
-  if (accessToken) {
+  if (token || accessToken) {
     if (!options.headers) options.headers = {};
     options.headers.Authorization = `JWT ${accessToken}`;
   }

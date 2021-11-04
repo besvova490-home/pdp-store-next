@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { Button } from "coax-ui-lib-0";
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 //layouts
 import UserProfileLayout from "../../layouts/UserProfileLayout";
@@ -20,7 +21,14 @@ import UserContextProvider from "../../contexts/UserProfileContext.context";
 //helpers
 import auth from "../../helpers/api/auth/auth";
 
-function ProfilePage({ profile }):JSX.Element {
+function ProfilePage():JSX.Element {
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    auth.profile().then(resp => setProfile(resp));
+  }, []);
+
+
   const { query } = useRouter();
 
   const profileComponents = {
@@ -50,6 +58,8 @@ function ProfilePage({ profile }):JSX.Element {
     }
   };
 
+  if (!profile) return null;
+
   return (
     <>
       <Head>
@@ -68,15 +78,18 @@ function ProfilePage({ profile }):JSX.Element {
     </>
   );
 }
-
-export default ProfilePage;
-
+ 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-  const profile = await auth.profile();
+  const { req } = context;
+  const { accessToken, refreshToken } = req.cookies;
 
+  
   return {
+    notFound: !accessToken || !refreshToken,
     props: {
-      profile
+
     }
   };
 };
+
+export default ProfilePage;

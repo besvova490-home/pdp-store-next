@@ -1,16 +1,16 @@
 import Link from "next/link";
+import { FaPhoneAlt, FaFacebookF, FaInstagram, FaPinterest, FaShoppingCart, FaSearch, FaUser } from "react-icons/fa";
+import { AiOutlineMail, AiOutlineTwitter, AiFillYoutube } from "react-icons/ai";
+import { RiLoginCircleFill } from "react-icons/ri";
+import Cookies from "universal-cookie";
 
 //element
 import LinkCustom from "../../elements/LinkCustom";
 
-//assets
-import { FaPhoneAlt, FaFacebookF, FaInstagram, FaPinterest, FaShoppingCart, FaSearch } from "react-icons/fa";
-import { AiOutlineMail, AiOutlineTwitter, AiFillYoutube } from "react-icons/ai";
-import { RiLoginCircleFill } from "react-icons/ri";
-
 
 function Header(): JSX.Element {
-
+  const cookies = new Cookies();
+  const refreshToken = cookies.get("refreshToken");
 
   return (
     <header className="header">
@@ -68,9 +68,19 @@ function Header(): JSX.Element {
             <div className="actions__item">
               <FaSearch className={"icon-component-base"}/>
             </div>
-            <LinkCustom href="/login" className="actions__item">
-              <RiLoginCircleFill className={"icon-component-base"}/>
-            </LinkCustom>
+            {
+              !refreshToken
+                ? (
+                  <LinkCustom href="/login" className="actions__item">
+                    <RiLoginCircleFill className={"icon-component-base"}/>
+                  </LinkCustom>
+                )
+                : (
+                  <LinkCustom href="/profile?tab=user-information" className="actions__item">
+                    <FaUser className={"icon-component-base"}/>
+                  </LinkCustom>
+                )
+            }
           </div>
         </div>
       </div>

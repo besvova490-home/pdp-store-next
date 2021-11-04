@@ -25,12 +25,12 @@ export const getProductsList = async (): Promise<{books: Array<Book>, counter: n
   }
 };
 
-export const getProductsById = async (bookId: number | string): Promise<Book> => {
+export const getProductsById = async (bookId: number | string, token = ""): Promise<Book> => {
   try {
     const data = await fetch({
       url: `/books/${bookId}`,
       method: "GET",
-    });
+    }, token);
 
     return data;
   } catch (e) {
